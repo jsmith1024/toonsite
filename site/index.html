@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type"text/javascript" src="Manifest.js"></script>
-        <script type"text/javascript" src="getAbout.js"></script>
+        <script type"text/javascript" src="selection.js"></script>
     </head>
     <body>
     <H1>Hello, World!</h1>
         <script type="text/javascript">
-            var x = getAbout("Yo!");
-            document.writeln("\n");
-            document.writeln(x);
-            document.write(typeof x);
-            document.write('\n');
-            document.write(typeof getAbout);
-            document.write('\n');
-            document.write(typeof Manifest);
-            let Mfest = new Manifest("Test");
-            document.write("\n" + Mfest.getSeries());
-            document.write("\nPrevious: ");
-            document.write(Mfest.getPrevious());
-            document.write("\nNext: ");
-            document.write(Mfest.getNext());
-            document.write("\nLast: ");
-            document.write(Mfest.getLast());
-            document.write("\nFirst: ");
-            document.write(Mfest.getFirst());
+            var series  = "TEST";
+//             var about   = getAbout(series);
+            var i       = 2;
+//             document.writeln("\n");
+//             document.writeln(about);
+//             document.write(typeof about);
+//             document.write('\n');
+//             document.write('\n');
+//             document.write(i.toString());
+            document.write("\nabc");
+            getAbout(series);
             document.write("\nxyz");
         </script>
         <div id="demo">
             <h1>Load Data</h1>
-<!--             <button type="button" onclick="loadDoc()">Change Content</button> -->
+            <button type="button" onclick="first(series, i)">First</button>
+            <button type="button" onclick="previous(series, i)">Previous</button>
+            <button type="button" onclick="getAbout(series)">About</button>
+            <button type="button" onclick="next(series, i)">Next</button>
+            <button type="button" onclick="last(series, i)">Last</button>
+        </div>
+        <div id="view">
+            Initial data.
         </div>
     </body>
 </html>
