@@ -6,8 +6,8 @@
     <body>
     <H1>Hello, World!</h1>
         <script type="text/javascript">
-            var series  = "TEST";
-//             var about   = getAbout(series);
+            var series  = ["TEST", '', '', ''];
+//             alert(series.length);
             var i       = 2;
 //             document.writeln("\n");
 //             document.writeln(about);
@@ -21,11 +21,11 @@
         </script>
         <div id="demo">
             <h1>Load Data</h1>
-            <button type="button" onclick="first(series, i)">First</button>
-            <button type="button" onclick="previous(series, i)">Previous</button>
+            <button type="button" onclick="i = first(series, i)">First</button>
+            <button type="button" onclick="i = previous(series, i)">Previous</button>
             <button type="button" onclick="getAbout(series)">About</button>
-            <button type="button" onclick="next(series, i)">Next</button>
-            <button type="button" onclick="last(series, i)">Last</button>
+            <button type="button" onclick="i = next(series, i)">Next</button>
+            <button type="button" onclick="i = last(series, i)">Last</button>
         </div>
         <div id="view">
             Initial data.
