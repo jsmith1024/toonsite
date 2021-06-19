@@ -2,31 +2,39 @@ class Manifest
 {
     constructor(series)
     {
-        var this.series     = series;
-        var this.episodes   = [];
-        var this.i          = this.episodes.length - 1;
+        document.write("\nHello");
+        this.series     = series;
+        this.episodes   = [1,2,3];
+        this.i          = this.episodes.length - 1;
     }
     
-//     toString()
-//     {
-//         var result          = this.series;
-//         return result;
-//     }
-    
-    get previous()
+    getSeries()
     {
-        this.i              = this.i - 1;
-        return this.i;
+        var result          = this.series;
+        return(result);
+//         document.write(this.series);
     }
     
-    get next()
+    getFirst()
     {
-        this.i              = this.i + 1;
-        return this.i;
+        return(0);
     }
-    get current()
+    
+    getPrevious()
+    {
+        this.i --;
+        return(this.i);
+    }
+    
+    getNext()
+    {
+        this.i ++;
+        return(this.i);
+    }
+    
+    getLast()
     {
         this.i              = this.episodes.length - 1;
-        return this.i;
+        return(this.i);
     }
 }

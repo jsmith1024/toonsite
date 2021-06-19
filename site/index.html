@@ -2,16 +2,30 @@
 <html>
     <head>
         <script type"text/javascript" src="Manifest.js"></script>
+        <script type"text/javascript" src="getAbout.js"></script>
     </head>
     <body>
     <H1>Hello, World!</h1>
         <script type="text/javascript">
-            document.write("abc");
-            M = Manifest("Test");
-//             document.write(M);
-//             document.write("\n");
-//             document.write(M.series());
-            document.write("xyz");
+            var x = getAbout("Yo!");
+            document.writeln("\n");
+            document.writeln(x);
+            document.write(typeof x);
+            document.write('\n');
+            document.write(typeof getAbout);
+            document.write('\n');
+            document.write(typeof Manifest);
+            let Mfest = new Manifest("Test");
+            document.write("\n" + Mfest.getSeries());
+            document.write("\nPrevious: ");
+            document.write(Mfest.getPrevious());
+            document.write("\nNext: ");
+            document.write(Mfest.getNext());
+            document.write("\nLast: ");
+            document.write(Mfest.getLast());
+            document.write("\nFirst: ");
+            document.write(Mfest.getFirst());
+            document.write("\nxyz");
         </script>
         <div id="demo">
             <h1>Load Data</h1>
