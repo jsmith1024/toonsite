@@ -1,0 +1,31 @@
+/**
+@mainpage   PROJECT
+
+@section intro_sec Introduction
+:
+    - :
+    <ul>
+        <li> 
+    </ul>
+
+@section    License
+    Copyright (c)  2021  J. Smith. \n
+    Permission is granted to copy, distribute and/or modify this document
+    u \n
+    \ref Full "Full License"
+
+@section    Instructions
+@par
+Follow this example code:
+
+@include demo-prep.py
+
+Of course, some variation is possible.
+
+@note
+A copy of this example file is included in the documentation. To run: \n
+python3 /usr/share/doc/PROJECT-doc/html/demo-prep.py
+
+@todo
+    Continue testing.
+*/

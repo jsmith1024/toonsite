@@ -1,0 +1,9 @@
+Document: PROJECT
+Title: PROJECT User's Manual
+Author: J. Smith
+Abstract: This manual describes PROJECT.
+Section: Programming
+
+format: HTML
+Index: /usr/share/doc/PROJECT-doc/html/index.html
+Files: /usr/share/doc/PROJECT-doc/html/*

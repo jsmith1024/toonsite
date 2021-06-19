@@ -1,0 +1,11 @@
+Package: PROJECT-doc
+Version: 1.0-1
+Section: doc
+Priority: optional
+Architecture: all
+Maintainer: J. Smith <j@noemail.com>
+Installed-Size: 
+Depends: 
+Suggests: 
+Homepage: http://not.exist.org/
+Description: 
