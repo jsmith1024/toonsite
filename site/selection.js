@@ -1,9 +1,3 @@
-function getAbout(series)
-{
-    var file    = "about.txt";
-    getEpisode(file);
-}
-
 function getEpisode(file)
 {
     var xhttp   = new XMLHttpRequest();
@@ -12,53 +6,63 @@ function getEpisode(file)
 //         alert(this.status)
         if (this.readyState == 4 && this.status == 200)
         {
-        document.getElementById("view").innerHTML = this.responseText;
+        document.getElementById("view").innerHTML = this.responseText + '</p><img src="' + file + '.jpg"></img>';
         }
     };
-//     alert(file)
-    xhttp.open("GET", file, true);
+    alert(file);
+    xhttp.open("GET", file + ".txt", true);
     xhttp.send();
 //     return(i);
 }
 
-function first(series, i)
+function getAbout(name, series)
 {
+    var file    = "about";
+    getEpisode(file);
+}
+
+function first(name, series, i)
+{
+    alert("name: " + name);
     i               = 0;
     num             = i + 1;
-    var file        = series[0] + "_" + num.toString() + ".txt"
+    var file        = name + "_" + num.toString()
     getEpisode(file);
     return(i);
 }
 
-function previous(series, i)
+function previous(name, series, i)
 {
     if(i > 0)
     {
+    alert("name: " + name);
         i --;
         num         = i + 1;
-        var file    = series[0] + "_" + num.toString() + ".txt"
+        var file    = name + "_" + num.toString()
         getEpisode(file);
     }
     return(i);
 }
 
-function next(series, i)
+function next(name, series, i)
 {
     if(i < series.length - 2)
     {
+    alert("name: " + name);
         i ++;
         num         = i + 1;
-        var file    = series[0] + "_" + num.toString() + ".txt"
+        var file    = name + "_" + num.toString()
         getEpisode(file);
     }
     return(i);
 }
 
-function last(series, i)
+function last(name, series, i)
 {
+    alert("name: " + name);
     i               = series.length - 2;
     num             = i + 1;
-    var file        = series[0] + "_" + num.toString() + ".txt"
+    var file        = name + "_" + num.toString()
     getEpisode(file);
     return(i);
 }

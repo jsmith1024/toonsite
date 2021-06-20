@@ -6,7 +6,8 @@
     <body>
     <H1>Hello, World!</h1>
         <script type="text/javascript">
-            var series  = ["TEST", '', '', ''];
+            var name    = "TEST";
+            var series  = ["x", '1', '2', '3'];
 //             alert(series.length);
             var i       = 2;
 //             document.writeln("\n");
@@ -16,16 +17,16 @@
 //             document.write('\n');
 //             document.write(i.toString());
             document.write("\nabc");
-            getAbout(series);
+            getAbout(name, series);
             document.write("\nxyz");
         </script>
         <div id="demo">
-            <h1>Load Data</h1>
-            <button type="button" onclick="i = first(series, i)">First</button>
-            <button type="button" onclick="i = previous(series, i)">Previous</button>
-            <button type="button" onclick="getAbout(series)">About</button>
-            <button type="button" onclick="i = next(series, i)">Next</button>
-            <button type="button" onclick="i = last(series, i)">Last</button>
+            <h1><script>document.write(name)</script></h1>
+            <button type="button" onclick="i = first(name, series, i)">First</button>
+            <button type="button" onclick="i = previous(name, series, i)">Previous</button>
+            <button type="button" onclick="getAbout(name, series)">About</button>
+            <button type="button" onclick="i = next(name, series, i)">Next</button>
+            <button type="button" onclick="i = last(name, series, i)">Last</button>
         </div>
         <div id="view">
             Initial data.
