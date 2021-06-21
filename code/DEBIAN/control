@@ -1,11 +1,11 @@
-Package: PROJECT
+Package: toonsite
 Version: 1.0-1
 Section: devel
 Priority: optional
 Architecture: all
-Maintainer: J. Smith <j@noemail.com>
+Maintainer: Joe Smith <j@noemail.com>
 Installed-Size: 
 Depends: 
 Suggests: 
 Homepage: http://not.exist.org/
-Description: 
+Description: comic trip website tools

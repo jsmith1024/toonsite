@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>TOONS!</title>
         <script type"text/javascript" src="TEST.json"></script>
         <script type"text/javascript" src="javascript.js"></script>
         <script type"text/javascript" src="selection.js"></script>
     </head>
     <body>
-    <H1>Hello, World!</h1>
         <script type="text/javascript">
             var name    = "TEST";
-//             var series  = ["x", '1', '2', '3'];
-//             alert(series.length);
-            var i       = 2;
-//             document.writeln("\n");
-//             document.writeln(about);
-//             document.write(typeof about);
-//             document.write('\n');
-//             document.write('\n');
-//             document.write(i.toString());
-            document.write("</p>abc");
             var series  = getSeries(name);
-            getAbout(series);
-            document.write("</p>type:&nbsp;&nbsp;" + typeof(series));
-            document.write("</p>series:&nbsp;" + series["title"]);
-            document.write("</p>xyz");
+            i           = last(series);
+            getEpisodeMeta(series["episodes"][i + 1]);
+            var debug   = false;
+            if(debug)
+            {
+                document.write("</p>Debug Data</p>")
+                document.write("</p>type:&nbsp;&nbsp;" + typeof(series));
+                document.write("</p>series:&nbsp;" + series["meta"]["title"] + "</p><hr>");
+            }
         </script>
-        <div id="demo">
-            <h1><script>document.write(name)</script></h1>
-            <button type="button" onclick="i = first(series, i)">First</button>
-            <button type="button" onclick="i = previous(series, i)">Previous</button>
+        <div id="controls">
+            <h1><script>document.write(series["meta"]["title"])</script></h1>
+            <button type="button" onclick="i = first(series)">First</button>
+            <button type="button" onclick="i = previous(series, i)">Prev</button>
             <button type="button" onclick="getAbout(series)">About</button>
             <button type="button" onclick="i = next(series, i)">Next</button>
-            <button type="button" onclick="i = last(series, i)">Last</button>
+            <button type="button" onclick="i = last(series)">Last</button>
+        </div>
+        </p><hr>
+        <div id="meta">
+            Initial data.
         </div>
         <div id="view">
             Initial data.

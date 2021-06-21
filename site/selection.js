@@ -19,7 +19,7 @@ function getSeries(name)
 //     alert("series: " + series["name"]);
 //     document.write("</p>TYPE:&nbsp;&nbsp;" + typeof(series));
 //     return(series);
-return({"title": "TEST", "about": "This is a test, only a test.", "Episodes": [{ "number": 001, "story": "the test", "part": 1, "notes": "hello"}, { "number": 002, "story": "the test", "part": 2, "notes": "hello"}, { "number": 003, "story": "the test", "part": 3, "notes": "hello"}] });
+return({"meta": {"title": "TEST", "about": "This is a test, only a test.", "notes": "none"}, "episodes": [{}, { "number": 001, "story": "the test", "part": 1, "notes": "hello"}, { "number": 002, "story": "the test", "part": 2, "notes": "hello"}, { "number": 003, "story": "the test", "part": 3, "notes": "hello"}] });
 }
 
 function getEpisode(file)
@@ -30,7 +30,7 @@ function getEpisode(file)
 //         alert(this.status)
         if (this.readyState == 4 && this.status == 200)
         {
-        document.getElementById("view").innerHTML = this.responseText + '</p><img src="' + file + '.jpg"></img>';
+            document.getElementById("view").innerHTML = this.responseText + '</p><img width="100%" src="' + file + '.jpg"></img>';
         }
     };
 //     alert(file);
@@ -39,18 +39,26 @@ function getEpisode(file)
 //     return(i);
 }
 
-function getAbout(series)
+function getEpisodeMeta(episode)
 {
-    document.getElementById("view").innerHTML = series["about"];
+//     alert("HERE");
+//     alert("</p>" + episode["number"]+ " <h1>" + episode["story"] + "</h1> " + episode["part"] + "</p>");
+    document.getElementById("meta").innerHTML = "</p>" + episode["number"] + " <h1>" + episode["story"] + "</h1> " + episode["part"] + "</p>");
 }
 
-function first(series, i)
+function getAbout(series)
+{
+    document.getElementById("meta").innerHTML = series["meta"]["about"];
+}
+
+function first(series)
 {
     i               = 0;
     num             = i + 1;
-//     alert("name: " + series["title"] + num);
-    var file        = series["title"] + "_" + num.toString();
+//     alert("name: " + series["meta"]["title"] + num);
+    var file        = series["meta"]["title"] + "_" + num.toString();
     getEpisode(file);
+//     getEpisodeMeta(series["episodes"][i]);
     return(i);
 }
 
@@ -60,32 +68,35 @@ function previous(series, i)
     {
         i --;
         num         = i + 1;
-//         alert("name: " + series["title"] + num);
-        var file    = series["title"] + "_" + num.toString();
+//         alert("name: " + series["meta"]["title"] + num);
+        var file    = series["meta"]["title"] + "_" + num.toString();
         getEpisode(file);
+//         getEpisodeMeta(series["episodes"][i]);
     }
     return(i);
 }
 
 function next(series, i)
 {
-    if(i < series["Episodes"].length - 1)
+    if(i < series["episodes"].length - 1)
     {
         i ++;
         num         = i + 1;
-//         alert("name: " + series["title"] + num);
-        var file    = series["title"] + "_" + num.toString();
+//         alert("name: " + series["meta"]["title"] + num);
+        var file    = series["meta"]["title"] + "_" + num.toString();
         getEpisode(file);
+//         getEpisodeMeta(series["episodes"][i]);
     }
     return(i);
 }
 
-function last(series, i)
+function last(series)
 {
-    i               = series["Episodes"].length - 1;
+    i               = series["episodes"].length - 2;
     num             = i + 1;
-//     alert("name: " + series["title"] + num);
-    var file        = series["title"] + "_" + num.toString();
+//     alert("name: " + series["meta"]["title"] + num);
+    var file        = series["meta"]["title"] + "_" + num.toString();
     getEpisode(file);
+//     getEpisodeMeta(series["episodes"][i]);
     return(i);
 }
