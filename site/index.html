@@ -3,7 +3,6 @@
     <head>
         <title>TOONS!</title>
         <script type"text/javascript" src="TEST.json"></script>
-        <script type"text/javascript" src="javascript.js"></script>
         <script type"text/javascript" src="selection.js"></script>
     </head>
     <body>
@@ -11,7 +10,7 @@
             var name    = "TEST";
             var series  = getSeries(name);
             i           = last(series);
-            getEpisodeMeta(series["episodes"][i + 1]);
+//             getEpisodeMeta(series["episodes"][i + 1]);    // Bypass to force issue. NO CHANGE in function.
             var debug   = false;
             if(debug)
             {
