@@ -30,27 +30,25 @@
 // IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-function getSeries(name)
+function getSeries(name, callback)
 {
-//     var xhttp   = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function()
-//     {
-//         alert(this.status)
-//         if (this.readyState == 4 && this.status == 200)
-//         {
-// //         document.getElementById("view").innerHTML = this.responseText + '</p><img src="' + file + '.jpg"></img>';
-// //         import series from name + '.json';
-//             var data    = callback(this.responseText);
-//             alert("data: " + data);
-//             var series  = parse(data);
+//     alert("trying to import json...");
+//     
+//     var xobj = new XMLHttpRequest();
+//         xobj.overrideMimeType("application/json");
+//     xobj.open('GET', name  + '.json', true); // Replace 'my_data' with the path to your file
+//     xobj.onreadystatechange = function () {
+//         if (xobj.readyState == 4 && xobj.status == "200") {
+//             alert(xobj.responseText);
+//             callback(xobj.responseText);
+// //             return(JSON.parse(xobj.responseText);
 //         }
 //     };
-//     alert(file);
-//     xhttp.open("GET", name + ".json", true);
-//     xhttp.send();
-//     alert("series: " + series["name"]);
-//     document.write("</p>TYPE:&nbsp;&nbsp;" + typeof(series));
-//     return(series);
+//     alert(xobj.responseText);
+//     xobj.send(null);
+    
+// //     return(JSON.parse(xobj.responseText));
+    
 return({"meta": {"title": "TEST", "about": "This is a test, only a test.", "notes": "none"}, "episodes": [{}, { "number": 001, "story": "the test", "part": 1, "notes": "hello"}, { "number": 002, "story": "the test", "part": 2, "notes": "hello"}, { "number": 003, "story": "the test", "part": 3, "notes": "hello"}] });
 }
 

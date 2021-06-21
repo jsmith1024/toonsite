@@ -1,5 +1,5 @@
 /**
-@mainpage   PROJECT
+@mainpage   toonsite
 
 @section intro_sec Introduction
 :
@@ -9,8 +9,8 @@
     </ul>
 
 @section    License
-    Copyright (c)  2021  J. Smith. \n
-    Permission is granted to copy, distribute and/or modify this document
+    Copyright (c)  2021  Joe Smith. \n
+    Permission is granted to copy, distribute and/or modify this document.
     u \n
     \ref Full "Full License"
 
@@ -18,13 +18,13 @@
 @par
 Follow this example code:
 
-@include demo-prep.py
+@include ???.py
 
 Of course, some variation is possible.
 
 @note
 A copy of this example file is included in the documentation. To run: \n
-python3 /usr/share/doc/PROJECT-doc/html/demo-prep.py
+python3 /usr/share/doc/PROJECT-doc/html/???.py
 
 @todo
     Continue testing.

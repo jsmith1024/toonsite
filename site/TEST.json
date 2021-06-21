@@ -1,33 +1,36 @@
 {
+    "meta":
     {
-        "meta":
+        "title": "TEST",
+        "about": "This is a test, only a test.",
+        "notes": "none"
+    },
+    
+    "episodes": 
+    [
         {
-            "title": "TEST",
-            "about": "This is a test, only a test.",
-            "notes": "none"
+            "": ""
+        },
+        
+        {
+            "number": "001",
+            "story": "the test",
+            "part": "1",
+            "notes": "hello1"
+        },
+        
+        {
+            "number": "002",
+            "story": "the test",
+            "part": "2",
+            "notes": "hello2"
+        },
+        
+        {
+            "number": "003",
+            "story": "the test",
+            "part": "3",
+            "notes": "hello3"
         }
-    }
-    {
-        "Episodes": 
-        [
-            {
-                "number": 001,
-                "story": "the test",
-                "part": 1,
-                "notes": "hello1"
-            },
-            {
-                "number": 002,
-                "story": "the test",
-                "part": 2,
-                "notes": "hello2"
-            },
-            {
-                "number": 003,
-                "story": "the test",
-                "part": 3,
-                "notes": "hello3"
-            }
-        ]
-    }
+    ]
 }
