@@ -2,25 +2,16 @@
 <html>
     <head>
         <title>TOONS!</title>
-        <script type"text/javascript" src="TEST.json"></script>
         <script type"text/javascript" src="selection.js"></script>
     </head>
     <body>
         <script type="text/javascript">
             var name    = "TEST";
+            document.write("name ");        // I got this far.
             var series  = getSeries(name);
-//             var response = '';
-//             getSeries(name, function(response){var data = JSON.parse(response);});
-//             var series  = data;
-            i           = last(series);
-//             getEpisodeMeta(series["episodes"][i + 1]);    // Bypass to force issue. NO CHANGE in function.
-            var debug   = false;
-            if(debug)
-            {
-                document.write("</p>Debug Data</p>")
-                document.write("</p>type:&nbsp;&nbsp;" + typeof(series));
-                document.write("</p>series:&nbsp;" + series["meta"]["title"] + "</p><hr>");
-            }
+            document.write("series ");      // I didn't reach this.
+            var i       = last(series);
+            document.write("i");            // Etc . . .
         </script>
         <div id="controls">
             <h1><script>document.write(series["meta"]["title"])</script></h1>

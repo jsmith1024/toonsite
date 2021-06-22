@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# jsonfile validation tool
+
 import json
 
 with open('site/TEST.json', 'r') as myfile:
