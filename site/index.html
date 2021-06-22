@@ -7,11 +7,12 @@
     <body>
         <script type="text/javascript">
             var name    = "TEST";
-            document.write("name ");        // I got this far.
-            var series  = getSeries(name);
-            document.write("series ");      // I didn't reach this.
+            document.write("</p>name: " + name);                        // I got this far.
+            var series  = {};
+            series      = getSeries(name, series);
+            document.write("</p>series: " + series["meta"]["title"]);   // Should produce: "series: TEST" - IT DOESN'T.
             var i       = last(series);
-            document.write("i");            // Etc . . .
+            document.write("i");
         </script>
         <div id="controls">
             <h1><script>document.write(series["meta"]["title"])</script></h1>

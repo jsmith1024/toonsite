@@ -8,22 +8,24 @@
  * @param   name        (string)    name of series
  * @return  (dictionary)
  */
-function getSeries(name)
+function getSeries(name, series)
 {
-    alert("Trying to load json...");        // I didn't see this.
+    var file    = name + ".json";
+    alert("Trying to load: " + file);
     var xhttp   = new XMLHttpRequest();
     xhttp.onreadystatechange = function()
     {
-        alert(this.status);
+//         alert(this.status);
         if (this.readyState == 4 && this.status == 200)
         {
             alert(this.responseText);
-            var series = JSON.parse(this.responseText);
+            series = JSON.parse(this.responseText);
+            alert(series["meta"]["title"] + " " + series["episodes"][3]["number"].toString()); // If correct, produces "TEST 003" - IS RI
         }
     };
-    xhttp.open("GET", file + ".json", true);
+    xhttp.open("GET", file, true);
     xhttp.send();
-    return(series);
+//     return(series); // Appears to not return series,
     
 //     This bypass gets it working.
 //     return({
@@ -62,7 +64,7 @@ function getSeries(name)
 //         }
 //     ]
 // });
-// }
+}
 
 /* getEpisode
  * @brief   display episode material in div "view"
