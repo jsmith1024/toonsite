@@ -6,63 +6,27 @@
 /* getSeries
  * @brief   read in series data
  * @param   name        (string)    name of series
- * @return  (dictionary)
+ * @param   onReceived  (callback)  name of series
  */
-function getSeries(name)
+function getSeries(name, onReceived)
 {
-    var file    = name + ".json";
-//     alert("Trying to load: " + file);
-    var xhttp   = new XMLHttpRequest();
+    //
+    var file        = name + ".json";
+    alert("Trying to load: " + file);
+    var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function()
     {
 //         alert(this.status);
         if (this.readyState == 4 && this.status == 200)
         {
-//             alert(this.responseText);
-            series = this.responseText;
+//         alert(this.responseText);
+        var series  = JSON.parse(this.responseText);
+        alert(series["meta"]["title"] + " " + series["episodes"][3]["number"].toString()); // If correct, produces "TEST 003"
+        onReceived(series);
         }
     };
     xhttp.open("GET", file, true);
     xhttp.send();
-//     return(series); // Appears to not return series,
-    
-//     This bypass gets it working.
-//     return({
-//     "meta":
-//     {
-//         "title": "TEST",
-//         "about": "This is a test, only a test.",
-//         "notes": "none"
-//     },
-//     
-//     "episodes": 
-//     [
-//         {
-//             "": ""
-//         },
-//         
-//         {
-//             "number": "001",
-//             "story": "the test",
-//             "part": "1",
-//             "notes": "hello1"
-//         },
-//         
-//         {
-//             "number": "002",
-//             "story": "the test",
-//             "part": "2",
-//             "notes": "hello2"
-//         },
-//         
-//         {
-//             "number": "003",
-//             "story": "the test",
-//             "part": "3",
-//             "notes": "hello3"
-//         }
-//     ]
-// });
 }
 
 /* getEpisode
@@ -71,7 +35,7 @@ function getSeries(name)
  */
 function getEpisode(file)
 {
-    var xhttp   = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function()
     {
         if (this.readyState == 4 && this.status == 200)

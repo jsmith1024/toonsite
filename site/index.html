@@ -7,25 +7,25 @@
     <body>
         <script type="text/javascript">
             var name    = "TEST";
-            document.write("</p>name: " + name);                        // I got this far.
+            document.write("</p>name: " + name);
             var series  = {};
-//             var data    = new Widget();
-//             alert(data.typeof());
-            function renderCallback(getSeries(name). series)
+            function update()
             {
-                if (this.readyState == 4 && this.status == 200)
-                {
-                    var series  = JSON.parse(series);
-                }
+                alert("Updating...");
+                document.getElementById("view").innerHTML = "</p>series: " + series["meta"]["title"];
             }
+            getSeries(name, function(received)
+            {
+                series = received;
+                alert("RECEIVED: series: " + series["meta"]["title"]);
+                update();
+            });
             getSeries(name);
-//             document.write(data[0]);
-//             document.write("</p>series: " + series["meta"]["title"]);   // Should produce: "series: TEST" - IT DOESN'T.
             var i       = last(series);
             document.write("i");
         </script>
         <div id="controls">
-            <h1><script>document.write(series["meta"]["title"])</script></h1>
+<!--             <h1><script>document.write(series["meta"]["title"])</script></h1> -->
 <!--            <button type="button" onclick="i = first(series)">First</button>
             <button type="button" onclick="i = previous(series, i)">Prev</button>
             <button type="button" onclick="getAbout(series)">About</button>
