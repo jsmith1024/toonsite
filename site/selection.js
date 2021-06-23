@@ -8,19 +8,18 @@
  * @param   name        (string)    name of series
  * @return  (dictionary)
  */
-function getSeries(name, series)
+function getSeries(name)
 {
     var file    = name + ".json";
-    alert("Trying to load: " + file);
+//     alert("Trying to load: " + file);
     var xhttp   = new XMLHttpRequest();
     xhttp.onreadystatechange = function()
     {
 //         alert(this.status);
         if (this.readyState == 4 && this.status == 200)
         {
-            alert(this.responseText);
-            series = JSON.parse(this.responseText);
-            alert(series["meta"]["title"] + " " + series["episodes"][3]["number"].toString()); // If correct, produces "TEST 003" - IS RI
+//             alert(this.responseText);
+            series = this.responseText;
         }
     };
     xhttp.open("GET", file, true);

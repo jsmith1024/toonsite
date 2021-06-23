@@ -9,18 +9,28 @@
             var name    = "TEST";
             document.write("</p>name: " + name);                        // I got this far.
             var series  = {};
-            series      = getSeries(name, series);
-            document.write("</p>series: " + series["meta"]["title"]);   // Should produce: "series: TEST" - IT DOESN'T.
+//             var data    = new Widget();
+//             alert(data.typeof());
+            function renderCallback(getSeries(name). series)
+            {
+                if (this.readyState == 4 && this.status == 200)
+                {
+                    var series  = JSON.parse(series);
+                }
+            }
+            getSeries(name);
+//             document.write(data[0]);
+//             document.write("</p>series: " + series["meta"]["title"]);   // Should produce: "series: TEST" - IT DOESN'T.
             var i       = last(series);
             document.write("i");
         </script>
         <div id="controls">
             <h1><script>document.write(series["meta"]["title"])</script></h1>
-            <button type="button" onclick="i = first(series)">First</button>
+<!--            <button type="button" onclick="i = first(series)">First</button>
             <button type="button" onclick="i = previous(series, i)">Prev</button>
             <button type="button" onclick="getAbout(series)">About</button>
             <button type="button" onclick="i = next(series, i)">Next</button>
-            <button type="button" onclick="i = last(series)">Last</button>
+            <button type="button" onclick="i = last(series)">Last</button>-->
         </div>
         </p><hr>
         <div id="meta">
