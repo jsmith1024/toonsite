@@ -1,31 +1,67 @@
 .nav
-            {
-                height:     80px;
-                width:      160px;
-                font-size:  50px;
-            }
-            
-            #meta
-            {
-                h1
-                {
-                    font-size:  50px;
-                }
-                p
-                {
-                    font-size:  40px;
-                }
-            }
-            
-            #view
-            {
-                h1
-                {
-                    font-size:  50px;
-                }
-                p
-                {
-                    font-size:  40px;
-                }
-            }
-            
+{
+    height:     30px;
+    width:      60px;
+    font-size:  16px;
+}
+
+#meta
+{
+    h1
+    {
+        font-size:  30px;
+    }
+    p
+    {
+        font-size:  16px;
+    }
+}
+
+#view
+{
+    h1
+    {
+        font-size:  30px;
+    }
+    p
+    {
+        font-size:  16px;
+    }
+}
+div.data {
+    font-size:16px;
+}
+
+@media screen and (max-width: 1000px) {
+    .nav
+    {
+        height:     80px;
+        width:      160px;
+        font-size:  50px;
+    }
+    #meta
+    {
+        h1
+        {
+            font-size:  50px;
+        }
+        p
+        {
+            font-size:  40px;
+        }
+    }
+    
+    #view
+    {
+        h1
+        {
+            font-size:  50px;
+        }
+        p
+        {
+            font-size:  40px;
+        }
+    }
+    div.data {
+        font-size:50px;
+    }
