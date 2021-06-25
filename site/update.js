@@ -30,7 +30,7 @@ function update()
     document.getElementById("last").disabled        = false;
     
     document.getElementById("meta").innerHTML       = "<h1>" + episode["story"] + " #" + episode["part"] + "</h1>";
-    document.getElementById("view").innerHTML       = "<p>"  + episode["notes"] + "</p><img width=\"100%\" src=\"" + name + "_" + episode["number"] + ".jpg\">";
+    document.getElementById("view").innerHTML       = "<p>"  + episode["notes"] + "</p><img src=\"" + name + "/episodes/" + name + "_" + episode["number"] + ".jpg\">";
 }
 
 /* last
@@ -96,7 +96,7 @@ function updateToLast()
  */
 function getData()
 {
-    var file    = name + ".json";
+    var file    = name + "/" + name + ".json";
     var xhttp   = new XMLHttpRequest();
     xhttp.onreadystatechange = function()
     {

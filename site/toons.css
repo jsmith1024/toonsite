@@ -13,7 +13,7 @@
     }
     p
     {
-        font-size:  16px;
+        font-size:  40px;
     }
 }
 
@@ -25,23 +25,29 @@
     }
     p
     {
-        font-size:  16px;
+        font-size:  40px;
     }
 }
-div.data {
-    font-size:16px;
+
+div.data
+{
+    font-size:  40px;
 }
-img {
-    width:  800px;
+
+img
+{
+    width:      720px;
 }
 
 @media screen and (max-width: 1000px) and (orientation: portrait) {
+    
     .nav
     {
         height:     80px;
         width:      160px;
         font-size:  50px;
     }
+    
     #meta
     {
         h1
@@ -65,20 +71,26 @@ img {
             font-size:  40px;
         }
     }
-    div.data {
-        font-size:50px;
+    
+    div.data
+    {
+        font-size:  50px;
     }
-    img {
-        width:  100%;
+    
+    img
+    {
+        width:      100%;
     }
 
 @media screen and (max-height: 1000px) and (orientation: landscape) {
+    
     .nav
     {
         height:     80px;
         width:      160px;
         font-size:  50px;
     }
+    
     #meta
     {
         h1
@@ -102,9 +114,13 @@ img {
             font-size:  40px;
         }
     }
-    div.data {
-        font-size:50px;
+    
+    div.data
+    {
+        font-size:  50px;
     }
-    img {
-        height:  300%;
+    
+    img
+    {
+        width:      720px;
     }
