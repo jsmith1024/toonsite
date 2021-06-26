@@ -2,7 +2,7 @@
     "meta":
     {
         "title": "TEST",
-        "about": "This is a test, only a test.",
+        "about": "This is a test, only a test.</p><img src=\"TEST/about.jpg\">",
         "notes": "none"
     },
     

@@ -10,10 +10,11 @@ function update()
 {
     if(null === series)
     {
+        document.getElementById("about").disabled       = true;
         document.getElementById("title").innerHTML      = "<h1>Coming soon...</h1>";
         document.getElementById("first").disabled       = true;
         document.getElementById("previous").disabled    = true;
-        document.getElementById("about").disabled       = true;
+        document.getElementById("reload").disabled      = true;
         document.getElementById("next").disabled        = true;
         document.getElementById("last").disabled        = true;
         document.getElementById("meta").innerHTML       = "<h1>Coming soon...</h1>";
@@ -22,18 +23,34 @@ function update()
     }
 
     var episode = series["episodes"][index];
-    document.getElementById("title").innerHTML      = "<h1>" + series["meta"]["title"] + "</h1>";
+    document.getElementById("about").disabled       = false;
+    document.getElementById("title").innerHTML      = series["meta"]["title"];
     document.getElementById("first").disabled       = false;
     document.getElementById("previous").disabled    = (index <= 1);
-    document.getElementById("about").disabled       = false;
+    document.getElementById("reload").disabled      = false;
     document.getElementById("next").disabled        = index >= (length - 1);
     document.getElementById("last").disabled        = false;
     
-    document.getElementById("meta").innerHTML       = "<h1>" + episode["story"] + " #" + episode["part"] + "</h1>";
-    document.getElementById("view").innerHTML       = "<p>"  + episode["notes"] + "</p><img src=\"" + name + "/episodes/" + name + "_" + episode["number"] + ".jpg\">";
+    let data                                        = "Episode #" + episode["number"];
+    data                                           += "<h1>" + episode["story"] + " - Part" + episode["part"] + "</h1>";
+    document.getElementById("meta").innerHTML       = data;
+    
+    data                                            = "<img src=\"" + name + "/episodes/" + name + "_" + episode["number"] + ".jpg\">";
+    data                                           += "<p>" + episode["notes"] + "</p>";
+//     alert(data);
+    document.getElementById("view").innerHTML       = data;
 }
 
-/* last
+/* updateToAbout
+ * @brief   update when about button pressed
+ */
+function updateToAbout()
+{
+    document.getElementById("meta").innerHTML       = series["meta"]["title"];
+    document.getElementById("view").innerHTML       = series["meta"]["about"];
+}
+
+/* updateToFirst
  * @brief   update when first button pressed
  */
 function updateToFirst()
@@ -45,7 +62,7 @@ function updateToFirst()
     update();
 }
 
-/* last
+/* updateToPrevious
  * @brief   update when prev button pressed
  */
 function updateToPrevious()
@@ -57,16 +74,15 @@ function updateToPrevious()
     update();
 }
 
-/* last
+/* reload
  * @brief   update when about button pressed
  */
-function updateToAbout()
+function reload()
 {
-//                 update();
-    document.getElementById("meta").innerHTML       = series["meta"]["about"];
+    update();
 }
 
-/* last
+/* updateToNext
  * @brief   update when next button pressed
  */
 function updateToNext()
@@ -79,7 +95,7 @@ function updateToNext()
 }
 
 
-/* last
+/* updateToLast
  * @brief   update when kast button pressed
  */
 function updateToLast()
@@ -91,7 +107,7 @@ function updateToLast()
     update();
 }
 
-/* last
+/* getData
  * @brief   Get series data from the server, update global variables, and update()
  */
 function getData()
