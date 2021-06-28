@@ -8,6 +8,7 @@
  */
 function update()
 {
+//     alert("update()");
     if(null === series)
     {
         document.getElementById("about").disabled       = true;
@@ -21,7 +22,7 @@ function update()
         document.getElementById("view").innerHTML       = "<h1>Coming soon...</h1>";
         return;
     }
-
+//     alert(series);
     var episode = series["episodes"][index];
     document.getElementById("about").disabled       = false;
     document.getElementById("title").innerHTML      = series["meta"]["title"];
@@ -112,8 +113,9 @@ function updateToLast()
  */
 function getData()
 {
+//     alert("getData()");
     var file    = name + "/" + name + ".json";
-    alert("|" + name + "|" + file);
+//     alert("|" + name + "|" + file);
     var xhttp   = new XMLHttpRequest();
     xhttp.onreadystatechange = function()
     {
@@ -124,7 +126,7 @@ function getData()
         // TODO: Error checking
         length  = series["episodes"].length;
         index   = length - 1;
-        
+//         alert("pre-update()");
         update();
         }
     };
