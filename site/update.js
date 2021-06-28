@@ -113,6 +113,7 @@ function updateToLast()
 function getData()
 {
     var file    = name + "/" + name + ".json";
+    alert("|" + name + "|" + file);
     var xhttp   = new XMLHttpRequest();
     xhttp.onreadystatechange = function()
     {
