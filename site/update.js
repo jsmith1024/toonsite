@@ -51,17 +51,48 @@ function updateToAbout()
     document.getElementById("view").innerHTML       = series["meta"]["about"];
 }
 
+// var first = document.querySelector('#first');
+
 /* updateToFirst
  * @brief   update when first button pressed
  */
-function updateToFirst()
+// first.onclick = function()
+// {
+//     alert("first");
+//     if(!(null === series))
+//     {
+//         toon.next();
+//         index   = 1;
+//     }
+//     update();
+// }
+
+function addListeners()
 {
-    if(!(null === series))
+    document.getElementById("first").addEventListener("click", function()
     {
-        index   = 1;
-    }
-    update();
+//         alert("first");
+        alert(toon.index);
+        if(!(null === series))
+        {
+//             toon.next();
+            index   = 1;
+        }
+        update();
+    });
 }
+
+/* updateToFirst
+ * @brief   update when first button pressed
+ */
+// function updateToFirst()
+// {
+//     if(!(null === series))
+//     {
+//         toon.next();
+//     }
+//     update();
+// }
 
 /* updateToPrevious
  * @brief   update when prev button pressed
@@ -114,8 +145,10 @@ function updateToLast()
 function getData()
 {
 //     alert("getData()");
+//     document.getElementById("data").innerHTML = "getData()";
     var file    = name + "/" + name + ".json";
 //     alert("|" + name + "|" + file);
+//     document.getElementById("data").innerHTML = file;
     var xhttp   = new XMLHttpRequest();
     xhttp.onreadystatechange = function()
     {

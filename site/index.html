@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="toons.css">
         <title>TOONS!</title>
+        <script type"text/javascript" src="toon.js"></script>
         <script type"text/javascript" src="update.js"></script>
     </head>
     <body>
@@ -20,7 +21,7 @@
             <h1 id="title">Coming Soon...</h1>
             <button type="button" class="nav" id="about"    onclick="updateToAbout()"       disabled>About</button>
             </br>
-            <button type="button" class="nav" id="first"    onclick="updateToFirst()"       disabled>First</button>
+            <button type="button" class="nav" id="first"    disabled>First</button>
             <button type="button" class="nav" id="previous" onclick="updateToPrevious()"    disabled>Prev</button>
             <button type="button" class="nav" id="reload"   onclick="reload()"              disabled>Ret</button>
             <button type="button" class="nav" id="next"     onclick="updateToNext()"        disabled>Next</button>
@@ -37,6 +38,18 @@
             // Run the page...
             update();   // to a consistent state
             getData();  // to use, which will update() when ready
+//             alert(toon.index);
+            addListeners();
+//             document.getElementById("first").addEventListener("click", function()
+//             {
+//                 alert("first");
+//                 if(!(null === series))
+//                 {
+//                     toon.next();
+//                     index   = 1;
+//                 }
+//                 update();
+//             });
         </script>
     </body>
 </html>
