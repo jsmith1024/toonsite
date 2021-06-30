@@ -6,15 +6,19 @@
         <link rel="stylesheet" href="toons.css">
         <title>TOONS!</title>
         <script type"text/javascript" src="toon.js"></script>
+        <script type"text/javascript" src="events.js"></script>
         <script type"text/javascript" src="update.js"></script>
     </head>
     <body>
         <script type="text/javascript">
             // Global Variables
-            var name    = "TEST";
-            var series  = null;
-            var length  = 0;
-            var index   = 0;
+            var name        = "TEST";
+            var series      = null;
+            var length      = 0;
+            var episode     = {};
+//             var index   = 0;
+            episode.index   = 0;
+            document.write(episode.index);
         // See end of body tag for running the page
         </script>
         <div id="controls">
@@ -22,10 +26,10 @@
             <button type="button" class="nav" id="about"    onclick="updateToAbout()"       disabled>About</button>
             </br>
             <button type="button" class="nav" id="first"    disabled>First</button>
-            <button type="button" class="nav" id="previous" onclick="updateToPrevious()"    disabled>Prev</button>
+            <button type="button" class="nav" id="previous" disabled>Prev</button>
             <button type="button" class="nav" id="reload"   onclick="reload()"              disabled>Ret</button>
-            <button type="button" class="nav" id="next"     onclick="updateToNext()"        disabled>Next</button>
-            <button type="button" class="nav" id="last"     onclick="updateToLast()"        disabled>Last</button>
+            <button type="button" class="nav" id="next"     disabled>Next</button>
+            <button type="button" class="nav" id="last"     disabled>Last</button>
         </div>		
         <hr>
         <div class="data" id="meta">
@@ -36,20 +40,11 @@
         </div>
         <script type="text/javascript">
             // Run the page...
+            addEventListeners();
             update();   // to a consistent state
             getData();  // to use, which will update() when ready
 //             alert(toon.index);
-            addListeners();
-//             document.getElementById("first").addEventListener("click", function()
-//             {
-//                 alert("first");
-//                 if(!(null === series))
-//                 {
-//                     toon.next();
-//                     index   = 1;
-//                 }
-//                 update();
-//             });
+//             addEventListeners();
         </script>
     </body>
 </html>

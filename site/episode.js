@@ -1,6 +1,6 @@
-var episode             = {};
+// var episode             = {};
 
-episode.index           = 0;
+// episode.index           = 0;
 
 episode.first           = function()
 {

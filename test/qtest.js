@@ -1,6 +1,6 @@
-QUnit.module('control');
+QUnit.module('episode');
 
-QUnit.test( "Test", async assert =>
+QUnit.test( "Episode", async assert =>
 {
     assert.equal( 0,        episode.index );
     episode.last();

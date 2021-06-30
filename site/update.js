@@ -8,7 +8,7 @@
  */
 function update()
 {
-//     alert("update()");
+    alert("update()");
     if(null === series)
     {
         document.getElementById("about").disabled       = true;
@@ -22,23 +22,28 @@ function update()
         document.getElementById("view").innerHTML       = "<h1>Coming soon...</h1>";
         return;
     }
-//     alert(series);
-    var episode = series["episodes"][index];
+//     alert(episode.index);
+    alert("HERE!");
+    alert(episode.index);
+    var episode = series["episodes"][episode.index];
+    alert(episode("number"));
     document.getElementById("about").disabled       = false;
+    alert("1");
     document.getElementById("title").innerHTML      = series["meta"]["title"];
+    alert("2");
     document.getElementById("first").disabled       = false;
-    document.getElementById("previous").disabled    = (index <= 1);
+    document.getElementById("previous").disabled    = (episode.index <= 1);
     document.getElementById("reload").disabled      = false;
-    document.getElementById("next").disabled        = index >= (length - 1);
+    document.getElementById("next").disabled        = episode.index >= (length - 1);
     document.getElementById("last").disabled        = false;
-    
+    alert("here");
     let data                                        = "Episode #" + episode["number"];
     data                                           += "<h1>" + episode["story"] + " - Part" + episode["part"] + "</h1>";
     document.getElementById("meta").innerHTML       = data;
     
     data                                            = "<img src=\"" + name + "/episodes/" + name + "_" + episode["number"] + ".jpg\">";
     data                                           += "<p>" + episode["notes"] + "</p>";
-//     alert(data);
+    alert(data);
     document.getElementById("view").innerHTML       = data;
 }
 
@@ -67,20 +72,20 @@ function updateToAbout()
 //     update();
 // }
 
-function addListeners()
-{
-    document.getElementById("first").addEventListener("click", function()
-    {
+// function addListeners()
+// {
+//     document.getElementById("first").addEventListener("click", function()
+//     {
 //         alert("first");
-        alert(toon.index);
-        if(!(null === series))
-        {
-//             toon.next();
-            index   = 1;
-        }
-        update();
-    });
-}
+//         alert(toon.index);
+//         if(!(null === series))
+//         {
+//             episode.next();
+//             index   = 1;
+//         }
+//         update();
+//     });
+// }
 
 /* updateToFirst
  * @brief   update when first button pressed
@@ -97,14 +102,14 @@ function addListeners()
 /* updateToPrevious
  * @brief   update when prev button pressed
  */
-function updateToPrevious()
-{
-    if(!(null === series) && (index > 1))
-    {
-        index   = index - 1;
-    }
-    update();
-}
+// function updateToPrevious()
+// {
+//     if(!(null === series) && (index > 1))
+//     {
+//         index   = index - 1;
+//     }
+//     update();
+// }
 
 /* reload
  * @brief   update when about button pressed
@@ -117,27 +122,27 @@ function reload()
 /* updateToNext
  * @brief   update when next button pressed
  */
-function updateToNext()
-{
-    if(!(null === series) && (index < (length - 1)))
-    {
-        index   = index + 1;
-    }
-    update();
-}
+// function updateToNext()
+// {
+//     if(!(null === series) && (index < (length - 1)))
+//     {
+//         index   = index + 1;
+//     }
+//     update();
+// }
 
 
 /* updateToLast
  * @brief   update when kast button pressed
  */
-function updateToLast()
-{
-    if(!(null === series))
-    {
-        index   = length - 1;
-    }
-    update();
-}
+// function updateToLast()
+// {
+//     if(!(null === series))
+//     {
+//         index   = length - 1;
+//     }
+//     update();
+// }
 
 /* getData
  * @brief   Get series data from the server, update global variables, and update()
@@ -157,10 +162,11 @@ function getData()
         series  = JSON.parse(this.responseText);
 
         // TODO: Error checking
-        length  = series["episodes"].length;
-        index   = length - 1;
-//         alert("pre-update()");
+        length          = series["episodes"].length;
+        episode.index   = length - 1;
+        alert("pre-update()");
         update();
+        alert("post-update()");
         }
     };
     xhttp.open("GET", file, true);
