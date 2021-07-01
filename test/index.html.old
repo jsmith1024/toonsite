@@ -26,6 +26,6 @@
 <script src="../site/episode.js"></script>
 <!-- <script src="../site/update.js"></script> -->
 <script src="qtest.js"></script>
-<div class="data" id="view">
+<!--<div class="data" id="view">
     Initial view.
-</div>
+</div>-->
