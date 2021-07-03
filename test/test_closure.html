@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Test Suite</title>
+<!-- <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.16.0.css"> -->
+<link rel="stylesheet" href="/usr/share/javascript/qunit/qunit.css">
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+<!--     <script src="https://code.jquery.com/qunit/qunit-2.16.0.js"></script> -->
+    <script src="/usr/share/javascript/qunit/qunit.js"></script>
+<!--     <script src="test/index_closure.js"></script> -->
+    <script>
+        function index(action, length = 0)
+        {
+            alert("Inside of closure: " + action + " " + length);
+            let index       = length;
+            let last        = length;
+            
+            if(action === "first")
+            {
+                return function()
+                {
+                    index   = 1;
+                    return index;
+                }
+            }
+            else if(action === "previous")
+            {
+                return function()
+                {
+                    index  -= 1;
+                    return index;
+                }
+            }
+            else if(action === "reload")
+            {
+                return function()
+                {
+                    return index;
+                }
+            }
+            else if(action === "next")
+            {
+                return function()
+                {
+                    index  += 1;
+                    return index;
+                }
+            }
+            else if(action === "last")
+            {
+                alert("last " + index);
+                return function()
+                {
+                    index   = last;
+                    return index;
+                }
+            }
+            else
+            {
+                alert("YOU MESSED UP!!");
+            }
+
+        };
+    </script> 
+    <script>i = index("last", 4); alert("INDEX IS: " + i);</script>
+    <script src="test/test_closure.js"></script>
+</body>
