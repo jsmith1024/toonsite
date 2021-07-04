@@ -10,7 +10,7 @@
     <script src="/usr/share/javascript/qunit/qunit.js"></script>
 <!--     <script src="test/index_closure.js"></script> -->
     <script>
-        function index(action, length = 0)
+        const index = (function(action, length = 0)
         {
             alert("Inside of closure: " + action + " " + length);
             let index       = length;
@@ -22,7 +22,7 @@
                 {
                     index   = 1;
                     return index;
-                }
+                };
             }
             else if(action === "previous")
             {
@@ -30,14 +30,14 @@
                 {
                     index  -= 1;
                     return index;
-                }
+                };
             }
             else if(action === "reload")
             {
                 return function()
                 {
                     return index;
-                }
+                };
             }
             else if(action === "next")
             {
@@ -45,23 +45,23 @@
                 {
                     index  += 1;
                     return index;
-                }
+                };
             }
             else if(action === "last")
             {
-                alert("last " + index);
+                alert("LAST " + index);
                 return function()
                 {
                     index   = last;
                     return index;
-                }
+                };
             }
             else
             {
                 alert("YOU MESSED UP!!");
             }
 
-        };
+        });
     </script> 
     <script>i = index("last", 4); alert("INDEX IS: " + i);</script>
     <script src="test/test_closure.js"></script>
