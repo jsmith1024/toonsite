@@ -2,6 +2,11 @@
 
 import cgi
 
+def setDiv(div, data):
+    print("here")
+    script  = "<script>document.getElementById(\"" + div + "\").innerHTML = \"" + data + "\";</script>"
+    print(script)
+
 print("Content-Type: text/html\n\n")
 print("<html>")
 print("\t<!DOCTYPE html>")
@@ -36,6 +41,8 @@ print(form)
 user = form.getfirst("user", "").upper()    # This way it's safe.
 for item in form.getlist("item"):
     print(item)
-
+print('<script>document.getElementById("view").innerHTML = "hello";</script>')
+setDiv("view", "HELLO")
 print("\t</body>")
 print("</html>")
+setDiv("view", "YAY!!")
