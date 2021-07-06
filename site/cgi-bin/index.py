@@ -1,11 +1,18 @@
 #!/usr/bin/env python3
 
 import cgi
+import cgitb
+cgitb.enable()
 
 def setDiv(div, data):
-    print("here")
+    #print("here")
     script  = "<script>document.getElementById(\"" + div + "\").innerHTML = \"" + data + "\";</script>"
     print(script)
+
+#def doThis(resource):
+    #print("here: " + resource)
+    #script  = "http://localhost:8000/cgi-bin/index.py&" + resource
+    #print(script)
 
 print("Content-Type: text/html\n\n")
 print("<html>")
@@ -19,7 +26,7 @@ print("\t<body>")
 print("""
         <div id="controls">
             <h1 id="title">Coming Soon...</h1>
-            <button type="button" class="nav" id="about"    onclick="updateToAbout()"       disabled>About</button>
+            <a href="http://localhost:8000/cgi-bin/index.py?action=about"><button>About</button></a>
             </br>
             <button type="button" class="nav" id="first"    disabled>First</button>
             <button type="button" class="nav" id="previous" disabled>Prev</button>
@@ -41,8 +48,24 @@ print(form)
 user = form.getfirst("user", "").upper()    # This way it's safe.
 for item in form.getlist("item"):
     print(item)
+print("keys:")
+print(form.keys())
+print("EOF")
+print(form.getfirst('action'))
 print('<script>document.getElementById("view").innerHTML = "hello";</script>')
 setDiv("view", "HELLO")
 print("\t</body>")
 print("</html>")
 setDiv("view", "YAY!!")
+
+###############################################
+## Using PageManager class to replace above: ##
+###############################################
+
+#from ToonModel      import ToonModelv
+#from ToonView       import ToonView
+#from ToonController import ToonController
+#from PageManager    import PageManager
+
+#Page    = PageManager(ToonModel(), ToonView(), ToonController())
+#Page.run()
