@@ -4,13 +4,13 @@ Content-Type: text/html
     <!DOCTYPE html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>TOONS!</title>
+        <title id="title_bar">TOONS!</title>
         <Content-Type: text/html>
     </head>
     <body>
         <div id="controls">
             <h1 id="title">Coming Soon...</h1>
-            <button type="button" class="nav" id="about"    onclick="updateToAbout()"       disabled>About</button>
+            <a href="http://localhost:8000/cgi-bin/index.py?title=TEST&index=0&action=about"><button id="about" disabled>About</button></a>
             </br>
             <button type="button" class="nav" id="first"    disabled>First</button>
             <button type="button" class="nav" id="previous" disabled>Prev</button>
