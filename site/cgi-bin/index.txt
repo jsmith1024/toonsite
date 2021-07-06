@@ -8,18 +8,14 @@ Content-Type: text/html
         <Content-Type: text/html>
     </head>
     <body>
+        <div id="title">
+            Initial title.
+        </div>		
         <div id="controls">
-            <h1 id="title">Coming Soon...</h1>
-            <a href="http://localhost:8000/cgi-bin/index.py?title=TEST&index=0&action=about"><button id="about" disabled>About</button></a>
-            </br>
-            <button type="button" class="nav" id="first"    disabled>First</button>
-            <button type="button" class="nav" id="previous" disabled>Prev</button>
-            <button type="button" class="nav" id="reload"   onclick="reload()"              disabled>Ret</button>
-            <button type="button" class="nav" id="next"     disabled>Next</button>
-            <button type="button" class="nav" id="last"     disabled>Last</button>
+            Initial controls.
         </div>		
         <hr>
-        <div class="data" id="data">
+        <div class="data" id="view">
             Initial view.
         </div>
     </body>
