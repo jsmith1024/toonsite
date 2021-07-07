@@ -2,7 +2,7 @@
 #   @brief   Python CGI script to present a simple website.
 #   @authors joe smith
 
-#from ButtonAcumulator   import ButtonAcumulator
+#from ButtonAccumulator  import ButtonAccumulator
 from DivUpdateFormatter import DivUpdateFormatter
 
 import fileinput
