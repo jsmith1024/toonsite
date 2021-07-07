@@ -17,8 +17,13 @@ class DivUpdateFormatter(HTMLSegmentFormatter):
     ##  setDiv
     #   @brief      Format HTML/JavaScript segments.
     #   @param      data        (str)           string to format
-    def setDiv(self, data):
+    #   @param      div_id      (str)           id of div to format     default = False
+    def setDiv(self, data, div_id = False):
         #print("here")
-        script  = "<script>document.getElementById(\"" + super()._getSegments('div') + "\").innerHTML = \"" + data + "\";</script>"
+        if div_id:
+            div = div_id
+        else:
+            div = super()._getSegments('div')
+        script  = "<script>document.getElementById(\"" + div + "\").innerHTML = \"" + data + "\";</script>"
         #print(script)
         super()._setResults(script)

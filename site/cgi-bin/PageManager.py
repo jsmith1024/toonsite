@@ -2,6 +2,9 @@
 #   @brief   Python CGI script to present a simple website.
 #   @authors joe smith
 
+#from ButtonAcumulator   import ButtonAcumulator
+from DivUpdateFormatter import DivUpdateFormatter
+
 import fileinput
 import json
 import cgi
@@ -28,6 +31,9 @@ class PageManager():
             self.__action   = 'last'
         filename            = "cgi-bin/index.txt"
         
+        div     = {'div': 'view'}
+        self.__DUF          = DivUpdateFormatter(div)
+        
         with fileinput.input(files=(filename)) as f:
             for line in f:
                 print(line)
@@ -53,10 +59,15 @@ class PageManager():
         data       += base + index +  '&action=next\">       <button id="next"       disabled>Next</button>  </a>\n'
         index       = str(len(self.__series["episodes"]) - 1)
         data       += base + index +  '&action=last\">       <button id="last"       disabled>Last</button>  </a>\n'
+        
+        # add in ButtonAcumulator
+        
+        #self.__DUF.setDiv(data)
+        #print(self.__DUF)
         print(data)
         #print("<script>document.getElementById(\"controls\").innerHTML  = \"" + data + "\";</script>")
-        print("<hr>")
-        print("<script>document.getElementById(\"title\").innerHTML     = \"<h1>" + self.__series["meta"]["title"] + "</h1>\";</script>")
+        #print("<hr>")
+        #print("<script>document.getElementById(\"title\").innerHTML     = \"<h1>" + self.__series["meta"]["title"] + "</h1>\";</script>")
     
     ##  run
     #   @brief  Page run loo, which handles events.
@@ -97,12 +108,15 @@ class PageManager():
         else:
             #raise ValueError("Invalid request.")
             pass
+        
+        #self.__DUF.setDiv(data)
+        #print(self.__DUF)
         print(data)
         #self.__setDiv("view", data)
     
     ##  setDiv
     #   @brief  updates page
-    def __setDiv(self, div, data):
-        #print("here")
-        script  = "<script>document.getElementById(\"" + div + "\").innerHTML = \"" + data + "\";</script>"
-        print(script)
+    #def __setDiv(self, div, data):
+        ##print("here")
+        #script  = "<script>document.getElementById(\"" + div + "\").innerHTML = \"" + data + "\";</script>"
+        #print(script)
