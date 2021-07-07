@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 
 import unittest
-from test_MODULE    import TestAdd_MODULE
+from test_HTMLSegmentFormatter      import TestAdd_HTMLSegmentFormatter
 
-def PROJECT_suite():
+def toonsite_suite():
     suite   = unittest.TestSuite()
     result  = unittest.TestResult()
-    suite.addTest(unittest.makeSuite(TestAdd_MODULE))
+    suite.addTest(unittest.makeSuite(TestAdd_HTMLSegmentFormatter))
     runner  = unittest.TextTestRunner(verbosity=2)
     print(runner.run(suite))
 
-print("\n\n\tunit testing PROJECT\n")
-PROJECT_suite()
+print("\n\n\tunit testing toonsite\n")
+toonsite_suite()
 print()

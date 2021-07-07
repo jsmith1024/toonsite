@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+
+from DivUpdateFormatter import DivUpdateFormatter
+
+div     = {'div': 'view'}
+DUF     = DivUpdateFormatter(div)
+data    = "<h1>hello world</h1>"
+DUF.setDiv(data)
+print(DUF)
+
+print("results: " + DUF.getResults())

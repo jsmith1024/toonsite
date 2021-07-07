@@ -1,50 +1,19 @@
 <!DOCTYPE html>
+<!-- made by joe smith -->
 <html>
-    <!-- made by j.smith and j. smith -->
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="refresh" content="0; url=cgi-bin/index.py" />
         <link rel="stylesheet" href="toons.css">
         <title>TOONS!</title>
-        <script type"text/javascript" src="toon.js"></script>
-        <script type"text/javascript" src="events.js"></script>
-        <script type"text/javascript" src="update.js"></script>
     </head>
-    <body>
+    <body onload="window.location.assign('cgi-bin/index.py')">
         <script type="text/javascript">
-            // Global Variables
-            var name        = "TEST";
-            var series      = null;
-            var length      = 0;
-            var episode     = {};
-//             var index   = 0;
-            episode.index   = 0;
-            document.write(episode.index);
-        // See end of body tag for running the page
+            window.location.assign("cgi-bin/index.py");
         </script>
-        <div id="controls">
-            <h1 id="title">Coming Soon...</h1>
-            <button type="button" class="nav" id="about"    name="about"    onclick="updateToAbout()"       disabled>About</button>
-            </br>
-            <button type="button" class="nav" id="first"    name="first"                    disabled>First</button>
-            <button type="button" class="nav" id="previous" name="previous"                 disabled>Prev</button>
-            <button type="button" class="nav" id="reload"   name="reload"   onclick="reload()"              disabled>Ret</button>
-            <button type="button" class="nav" id="next"     name="next"                     disabled>Next</button>
-            <button type="button" class="nav" id="last"     name="last"                     disabled>Last</button>
-        </div>		
-        <hr>
-        <div class="data" id="meta">
-            Initial meta.
-        </div>
-        <div class="data" id="view">
-            Initial view.
-        </div>
-        <script type="text/javascript">
-            // Run the page...
-            addEventListeners();
-            update();   // to a consistent state
-            getData();  // to use, which will update() when ready
-//             alert(toon.index);
-//             addEventListeners();
-        </script>
+        <?php
+            header("location: cgi-bin/index.py", TRUE, 301);
+            exit;
+        ?>
     </body>
 </html>
