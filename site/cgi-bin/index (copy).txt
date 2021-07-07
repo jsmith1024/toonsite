@@ -10,6 +10,13 @@ Content-Type: text/html
     <body>
         <div id="title">
             Initial title.
-        </div>
+        </div>		
+<--        <div id="controls">
+            Initial controls.
+        </div>		
+        <hr>
+        <div class="data" id="view">
+            Initial view.
+        </div> -->
     </body>
 </html>
