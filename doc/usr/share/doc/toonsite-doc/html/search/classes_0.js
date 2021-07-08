@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['divupdateformatter_22',['DivUpdateFormatter',['../classDivUpdateFormatter_1_1DivUpdateFormatter.html',1,'DivUpdateFormatter.DivUpdateFormatter'],['../classDivUpdateFormatter.html',1,'DivUpdateFormatter']]]
+  ['buttonformatter_26',['ButtonFormatter',['../classButtonFormatter_1_1ButtonFormatter.html',1,'ButtonFormatter.ButtonFormatter'],['../classButtonFormatter.html',1,'ButtonFormatter']]]
 ];

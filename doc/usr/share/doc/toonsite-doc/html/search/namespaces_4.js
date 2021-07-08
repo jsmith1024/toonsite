@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pagemanager_29',['PageManager',['../namespacePageManager.html',1,'']]]
+  ['linkformatter_35',['LinkFormatter',['../namespaceLinkFormatter.html',1,'']]]
 ];

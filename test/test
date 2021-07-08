@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
 
 import unittest
-from test_HTMLSegmentFormatter      import TestAdd_HTMLSegmentFormatter
-from test_DivUpdateFormatter        import TestAdd_DivUpdateFormatter
-from test_ButtonAccumulator         import TestAdd_ButtonAccumulator
+from test_HTMLSegmentFormatter              import TestAdd_HTMLSegmentFormatter
+from test_DivUpdateFormatter                import TestAdd_DivUpdateFormatter
+from test_ButtonFormatter                   import TestAdd_ButtonFormatter
+from test_LinkFormatter                     import TestAdd_LinkFormatter
+from test_LinkFormatterAndButtonFormatter   import TestAdd_LinkAndButton
 
 def toonsite_suite():
     suite   = unittest.TestSuite()
     result  = unittest.TestResult()
     suite.addTest(unittest.makeSuite(TestAdd_HTMLSegmentFormatter))
     suite.addTest(unittest.makeSuite(TestAdd_DivUpdateFormatter))
-    suite.addTest(unittest.makeSuite(TestAdd_ButtonAccumulator))
+    suite.addTest(unittest.makeSuite(TestAdd_ButtonFormatter))
+    suite.addTest(unittest.makeSuite(TestAdd_LinkFormatter))
+    suite.addTest(unittest.makeSuite(TestAdd_LinkAndButton))
     runner  = unittest.TextTestRunner(verbosity=2)
     print(runner.run(suite))
 

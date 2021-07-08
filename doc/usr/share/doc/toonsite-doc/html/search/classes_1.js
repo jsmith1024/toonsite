@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['htmlsegmentformatter_23',['HTMLSegmentFormatter',['../classHTMLSegmentFormatter.html',1,'HTMLSegmentFormatter'],['../classHTMLSegmentFormatter_1_1HTMLSegmentFormatter.html',1,'HTMLSegmentFormatter.HTMLSegmentFormatter']]]
+  ['divupdateformatter_27',['DivUpdateFormatter',['../classDivUpdateFormatter_1_1DivUpdateFormatter.html',1,'DivUpdateFormatter.DivUpdateFormatter'],['../classDivUpdateFormatter.html',1,'DivUpdateFormatter']]]
 ];

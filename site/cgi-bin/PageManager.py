@@ -2,7 +2,8 @@
 #   @brief   Python CGI script to present a simple website.
 #   @authors joe smith
 
-#from ButtonAccumulator  import ButtonAccumulator
+from ButtonFormatter    import ButtonFormatter
+from LinkFormatter      import LinkFormatter
 from DivUpdateFormatter import DivUpdateFormatter
 
 import fileinput
@@ -42,27 +43,62 @@ class PageManager():
         self.__series       = json.loads(data)
         print("<script>document.getElementById(\"title_bar\").innerHTML = \"" + self.__series["meta"]["title"] + "\";</script>")
         
+        data                = '<h1>' + self.__series["meta"]["title"] + '</h1>'
+        self.__DUF.setDiv(data, 'title')
+        print(self.__DUF)
+        #print(data)
+        
         if not form.getfirst('index'):
             self.__index    = len(self.__series["episodes"]) - 1
         
-        base        = '<a href="http://localhost:8000/cgi-bin/index.py?title=' + self.__title + '&index='
+        data        = ''
+        LFm         = LinkFormatter()
+        BFm         = ButtonFormatter()
         index       = str(self.__index)
-        data        = base + index + '&action=about\">      <button id="about"      disabled>About</button> </a>\n'
-        data       += "</br>\n"
+        action      = 'about'
+        fields      = {'title': 'TEST', 'index': index, 'action': action}
+        url         = 'http://localhost:8000/cgi-bin/index.py'
+        name        = BFm.setButton(action, action.capitalize())
+        data       += LFm.setLink(url, name, fields)
+        data       += "</p>\n"
+        
         index       = str(1)
-        data       += base + index +  '&action=first\">      <button id="first"      disabled>First</button> </a>\n'
+        action      = 'first'
+        fields      = {'title': 'TEST', 'index': index, 'action': action}
+        url         = 'http://localhost:8000/cgi-bin/index.py'
+        name        = BFm.setButton(action, action.capitalize())
+        data       += LFm.setLink(url, name, fields)
+        
         index       = str(self.__index - 1)
-        data       += base + index +  '&action=previous\">   <button id="previous"   disabled>Prev</button>  </a>\n'
+        action      = 'previous'
+        fields      = {'title': 'TEST', 'index': index, 'action': action}
+        url         = 'http://localhost:8000/cgi-bin/index.py'
+        name        = BFm.setButton(action, action.capitalize()[:-4])
+        data       += LFm.setLink(url, name, fields)
+        
         index       = str(self.__index)
-        data       += base + index +  '&action=reload\">     <button id="reload"     disabled>Ret</button>   </a>\n'
+        action      = 'reload'
+        fields      = {'title': 'TEST', 'index': index, 'action': action}
+        url         = 'http://localhost:8000/cgi-bin/index.py'
+        name        = BFm.setButton(action, action.capitalize())
+        data       += LFm.setLink(url, name, fields)
+        
         index       = str(self.__index + 1)
-        data       += base + index +  '&action=next\">       <button id="next"       disabled>Next</button>  </a>\n'
+        action      = 'next'
+        fields      = {'title': 'TEST', 'index': index, 'action': action}
+        url         = 'http://localhost:8000/cgi-bin/index.py'
+        name        = BFm.setButton(action, action.capitalize())
+        data       += LFm.setLink(url, name, fields)
+        
         index       = str(len(self.__series["episodes"]) - 1)
-        data       += base + index +  '&action=last\">       <button id="last"       disabled>Last</button>  </a>\n'
+        action      = 'last'
+        fields      = {'title': 'TEST', 'index': index, 'action': action}
+        url         = 'http://localhost:8000/cgi-bin/index.py'
+        name        = BFm.setButton(action, action.capitalize())
+        data       += LFm.setLink(url, name, fields)
         
-        # add in ButtonAcumulator
-        
-        #self.__DUF.setDiv(data)
+        data       += "<hr>\n"
+        #self.__DUF.setDiv(data, 'controls')
         #print(self.__DUF)
         print(data)
         #print("<script>document.getElementById(\"controls\").innerHTML  = \"" + data + "\";</script>")
@@ -112,11 +148,4 @@ class PageManager():
         #self.__DUF.setDiv(data)
         #print(self.__DUF)
         print(data)
-        #self.__setDiv("view", data)
-    
-    ##  setDiv
-    #   @brief  updates page
-    #def __setDiv(self, div, data):
-        ##print("here")
-        #script  = "<script>document.getElementById(\"" + div + "\").innerHTML = \"" + data + "\";</script>"
-        #print(script)
+        #return data

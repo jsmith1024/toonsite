@@ -15,7 +15,7 @@ class HTMLSegmentFormatter():
     ##  constuctor
     #   @brief      Aggregate MVC and display page.
     #   @param      segments    (dict)          code segments
-    def __init__(self, segments):
+    def __init__(self, segments = {}):
         self.__segments     = segments
         self.__results      = ''            # output string
     

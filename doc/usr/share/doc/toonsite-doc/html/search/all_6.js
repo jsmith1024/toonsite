@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_2edox_13',['main.dox',['../main_8dox.html',1,'']]]
+  ['linkformatter_13',['LinkFormatter',['../classLinkFormatter.html',1,'LinkFormatter'],['../classLinkFormatter_1_1LinkFormatter.html',1,'LinkFormatter.LinkFormatter'],['../namespaceLinkFormatter.html',1,'LinkFormatter']]],
+  ['linkformatter_2epy_14',['LinkFormatter.py',['../LinkFormatter_8py.html',1,'']]]
 ];

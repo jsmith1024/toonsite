@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['buttonacumulator_25',['ButtonAcumulator',['../namespaceButtonAcumulator.html',1,'']]]
+  ['buttonformatter_31',['ButtonFormatter',['../namespaceButtonFormatter.html',1,'']]]
 ];
