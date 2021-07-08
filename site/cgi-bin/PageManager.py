@@ -35,34 +35,37 @@ class PageManager():
         div     = {'div': 'view'}
         self.__DUF          = DivUpdateFormatter(div)
         
-        if not form.getfirst('index'):
-            self.__index    = len(self.__series["episodes"]) - 1
-        
         with open(self.__title + '/'+ self.__title + '.json', 'r') as myfile:
             data=myfile.read()
         self.__series       = json.loads(data)
-
-    ##  printBody
-    #   @brief  Print outline of page.
-    def printBody(self):
-        with fileinput.input(files=(self.__filename)) as f:
-            for line in f:
-                print(line[:-1])
-
-    ##  printTitleBar
-    #   @brief  Set title in web browser bar.
-    def printTitleBar(self):
-        print('<title>' + self.__series["meta"]["title"] + '</title>')
+        
+        if not form.getfirst('index'):
+            self.__index    = len(self.__series["episodes"]) - 1
+        
+    ##  printStart
+    #   @brief  Print start of page.
+    def printStart(self):
+        print('Content-Type: text/html\n\n<html>\n\t<!DOCTYPE html>')
+        print('\t<head>')
+        print('\t\t<meta http-equiv="Content-Type" content="text/html; charset=utf-8">')
+        print('\t\t<Content-Type: text/html>')
+        print('\t\t<link rel="stylesheet" href="toons.css">')
+        print('\t\t<link rel="icon" href="http:///favicon.ico">')
+        print('\t\t<title>' + self.__series["meta"]["title"] + '</title>')
+        print('\t</head>')
+        print('\t<body>\n')
         
     ##  printTitle
     #   @brief  Print title of page.
     def printTitle(self):
-        print('<h1>' + self.__series["meta"]["title"] + '</h1>')
+        print('\t\t<div id="title">')
+        print('\t\t\t<h1>' + self.__series["meta"]["title"] + '</h1>')
+        print('\t\t</div>\n')
         
     ##  printButtons
     #   @brief  Print contol buttons on  page.
     def printButtons(self):
-        data        = ''
+        data        = '\t\t<div id="controls">\n'
         LFm         = LinkFormatter({'title': 'TEST'})
         BFm         = ButtonFormatter()
         
@@ -72,75 +75,86 @@ class PageManager():
         fields      = {'index': index, 'action': action}
         url         = 'http://localhost:8000/cgi-bin/index.py'
         name        = BFm.setButton(action, action.capitalize())
-        data       += LFm.setLink(url, name, fields)
-        data       += "</p>\n"
+        data       += '\t\t\t' + LFm.setLink(url, name, fields) +'\n'
+        
+        data       += "\t\t\t</p>\n"
         
         action      = 'first'
         index       = str(1)
         fields      = {'index': index, 'action': action}
         url         = 'http://localhost:8000/cgi-bin/index.py'
         name        = BFm.setButton(action, action.capitalize())
-        data       += LFm.setLink(url, name, fields)
+        data       += '\t\t\t' + LFm.setLink(url, name, fields) +'\n'
         
         action      = 'previous'
         index       = str(self.__index - 1)
         fields      = {'index': index, 'action': action}
         url         = 'http://localhost:8000/cgi-bin/index.py'
         name        = BFm.setButton(action, action.capitalize()[:-4])
-        data       += LFm.setLink(url, name, fields)
+        data       += '\t\t\t' + LFm.setLink(url, name, fields) +'\n'
         
         action      = 'reload'
         index       = str(self.__index)
         fields      = {'index': index, 'action': action}
         url         = 'http://localhost:8000/cgi-bin/index.py'
         name        = BFm.setButton(action, action.capitalize())
-        data       += LFm.setLink(url, name, fields)
+        data       += '\t\t\t' + LFm.setLink(url, name, fields) +'\n'
         
         action      = 'next'
         index       = str(self.__index + 1)
         fields      = {'index': index, 'action': action}
         url         = 'http://localhost:8000/cgi-bin/index.py'
         name        = BFm.setButton(action, action.capitalize())
-        data       += LFm.setLink(url, name, fields)
+        data       += '\t\t\t' + LFm.setLink(url, name, fields) +'\n'
         
         action      = 'last'
         index       = str(len(self.__series["episodes"]) - 1)
         fields      = {'index': index, 'action': action}
         url         = 'http://localhost:8000/cgi-bin/index.py'
         name        = BFm.setButton(action, action.capitalize())
-        data       += LFm.setLink(url, name, fields)
+        data       += '\t\t\t' + LFm.setLink(url, name, fields) +'\n'
         print(data)
         
         # Set each button's status.
-        print('<script>document.getElementById("about").disabled      = false;</script>')
-        print('<script>document.getElementById("first").disabled      = false;</script>')
+        print('\t\t\t' + '<script>document.getElementById("about").disabled      = false;</script>')
+        print('\t\t\t' + '<script>document.getElementById("first").disabled      = false;</script>')
         if self.__index <= 1:
             disabled = "true"
         else:
             disabled = "false"
-        print('<script>document.getElementById("previous").disabled   = ' + disabled + ';</script>')
-        print('<script>document.getElementById("reload").disabled     = false;</script>')
+        print('\t\t\t' + '<script>document.getElementById("previous").disabled   = ' + disabled + ';</script>')
+        print('\t\t\t' + '<script>document.getElementById("reload").disabled     = false;</script>')
         if self.__index >= len(self.__series["episodes"]) - 1:
             disabled = "true"
         else:
             disabled = "false"
-        print('<script>document.getElementById("next").disabled       = ' + disabled + ';</script>')
-        print('<script>document.getElementById("last").disabled       = false;</script>')
+        print('\t\t\t' + '<script>document.getElementById("next").disabled       = ' + disabled + ';</script>')
+        print('\t\t\t' + '<script>document.getElementById("last").disabled       = false;</script>')
+        print('\t\t</div>\n')
         
     ##  printLine
     #   @brief  Print a separation line on page.
     def printLine(self):
-        print('<hr>')
+        print('\t\t<hr>\n')
         
     ##  printContent
     #   @brief  Print contents on page.
     def printContent(self):
+        print('\t\t<div id="data">')
         if  (self.__action == "about"):
-            data            = self.__series["meta"]["about"]
+            data    = '\t\t\t' + self.__series["meta"]["about"]
         else:
             episode = self.__series["episodes"][self.__index]
-            data    = "Episode #" + episode["number"]
+            data    = '\t\t\t'
+            data   += "Episode #" + episode["number"]
             data   += "<h1>" + episode["story"] + " - Part" + episode["part"] + "</h1>"
             data   += "<img src=\"../" + self.__title + "/episodes/" + self.__title + "_" + episode["number"] + ".jpg\">"
             data   += "<p>" + episode["notes"] + "</p>"
         print(data)
+        print('\t\t</div>\n')
+        
+    ##  printFinish
+    #   @brief  Print end of page.
+    def printFinish(self):
+        print('\t</body>')
+        print('</html>')
