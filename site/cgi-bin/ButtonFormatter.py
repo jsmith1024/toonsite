@@ -4,12 +4,6 @@
 
 from HTMLSegmentFormatter   import HTMLSegmentFormatter
 
-#import fileinput
-#import json
-#import cgi
-#import cgitb
-#cgitb.enable()
-
 ##  @class  ButtonFormatter
 #   @brief  Format a button.
 class ButtonFormatter(HTMLSegmentFormatter):

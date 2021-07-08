@@ -4,12 +4,8 @@ Content-Type: text/html
     <!DOCTYPE html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title id="title_bar">TOONS!</title>
         <Content-Type: text/html>
     </head>
     <body>
-        <div id="title">
-            Initial title.
-        </div>
     </body>
 </html>

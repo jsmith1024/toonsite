@@ -2,12 +2,6 @@
 #   @brief   Formats HTML segments for CGI scripts.
 #   @authors joe smith
 
-#import fileinput
-#import json
-#import cgi
-#import cgitb
-#cgitb.enable()
-
 ##  @class  HTMLSegmentFormatter
 #   @brief  Stores basic format parameters and results.
 class HTMLSegmentFormatter():
@@ -26,19 +20,25 @@ class HTMLSegmentFormatter():
         return self.__results
     
     ##  getSegments
-    #   @brief      Format HTML/JavaScript segments.
+    #   @brief      Return a segment.
     #   @returns    (str)           string to format
     def _getSegments(self, key):
         return self.__segments[key]
     
+    ##  getAllSegments
+    #   @brief      Return all segments.
+    #   @returns    (str)           string to format
+    def _getAllSegments(self):
+        return self.__segments
+    
     ##  getResults
-    #   @brief      Format HTML/JavaScript segments.
+    #   @brief      Get results.
     #   @returns    (str)           formatted string
     def getResults(self):
         return self.__results
     
     ##  setResults
-    #   @brief      Format HTML/JavaScript segments.
+    #   @brief      Set results.
     #   @param      data        (str)           string to format
     def _setResults(self, results):
         self.__results      = results

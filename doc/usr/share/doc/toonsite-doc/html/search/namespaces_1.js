@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['divupdateformatter_32',['DivUpdateFormatter',['../namespaceDivUpdateFormatter.html',1,'']]]
+  ['divupdateformatter_37',['DivUpdateFormatter',['../namespaceDivUpdateFormatter.html',1,'']]]
 ];

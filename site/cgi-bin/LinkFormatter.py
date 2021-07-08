@@ -4,11 +4,7 @@
 
 from HTMLSegmentFormatter   import HTMLSegmentFormatter
 
-#import fileinput
-#import json
-#import cgi
-#import cgitb
-#cgitb.enable()
+from copy                   import deepcopy
 
 ##  @class  LinkFormatter
 #   @brief  Format and accumulate a group of buttons.
@@ -21,7 +17,15 @@ class LinkFormatter(HTMLSegmentFormatter):
     #   @param      fields      (dict)          request fields
     #   @returns    (str)                       link string
     def setLink(self, url, name, fields = False):
-        #print("here")
+        # merge default and local fields
+        if not super()._getAllSegments() == {}:
+            temp_fields = deepcopy(fields)
+            fields      = deepcopy(super()._getAllSegments())
+            for key in temp_fields.keys():
+                fields[key] = temp_fields[key]
+        #print(str(fields))
+        
+        # Format link.
         data            = '<a href=\"' + url
         if fields:
             data       += '?'

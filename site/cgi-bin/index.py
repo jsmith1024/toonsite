@@ -7,4 +7,9 @@ cgitb.enable()
 from PageManager    import PageManager
 
 Page    = PageManager()
-Page.run()
+Page.printBody()
+Page.printTitleBar()
+Page.printTitle()
+Page.printButtons()
+Page.printLine()
+Page.printContent()

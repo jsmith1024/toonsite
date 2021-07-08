@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['linkformatter_35',['LinkFormatter',['../namespaceLinkFormatter.html',1,'']]]
+  ['linkformatter_40',['LinkFormatter',['../namespaceLinkFormatter.html',1,'']]]
 ];
