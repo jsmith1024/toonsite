@@ -3,17 +3,17 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="refresh" content="0; url=cgi-bin/index.py" />
+        <meta http-equiv="refresh" content="0; url=cgi-bin/index.py?title=TEST&index=3&action=last" />
         <link rel="stylesheet" href="toons.css">
         <link rel="icon" href="http://localhost:8000/favicon.ico">
         <title>TOONS!</title>
     </head>
-    <body onload="window.location.assign('cgi-bin/index.py')">
+    <body onload="window.location.assign('cgi-bin/index.py?title=TEST&index=3&action=last')">
         <script type="text/javascript">
-            window.location.assign("cgi-bin/index.py");
+            window.location.assign("cgi-bin/index.py?title=TEST&index=3&action=last");
         </script>
         <?php
-            header("location: cgi-bin/index.py", TRUE, 301);
+            header("location: cgi-bin/index.py?title=TEST&index=3&action=last", TRUE, 301);
             exit;
         ?>
     </body>
