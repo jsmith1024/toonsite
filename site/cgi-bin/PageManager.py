@@ -4,8 +4,8 @@
 
 from ButtonFormatter    import ButtonFormatter
 from LinkFormatter      import LinkFormatter
-from DivUpdateFormatter import DivUpdateFormatter
 
+import copy
 import fileinput
 import json
 import cgi
@@ -32,15 +32,20 @@ class PageManager():
             self.__action   = 'last'
         self.__filename     = "cgi-bin/index.txt"
         
-        div     = {'div': 'view'}
-        self.__DUF          = DivUpdateFormatter(div)
-        
-        with open(self.__title + '/'+ self.__title + '.json', 'r') as myfile:
+        with open('TEST' + '/'+ 'TEST' + '.json', 'r') as myfile:
             data=myfile.read()
         self.__series       = json.loads(data)
         
         if not form.getfirst('index'):
             self.__index    = len(self.__series["episodes"]) - 1
+        
+        #host                = 'localhost'
+        #port                = '8000'
+        #file_path           = 'cgi-bin/index.py'
+        #self.__url          = 'http://' + host + ':' + port + '/' + file_path
+        
+        import os
+        self.__url          = copy.deepcopy(os.environ['HTTP_REFERER'].split('?')[0])
         
     ##  printStart
     #   @brief  Print start of page.
@@ -49,11 +54,12 @@ class PageManager():
         print('\t<head>')
         print('\t\t<meta http-equiv="Content-Type" content="text/html; charset=utf-8">')
         print('\t\t<Content-Type: text/html>')
-        print('\t\t<link rel="stylesheet" href="toons.css">')
+        print('\t\t<link rel="stylesheet" href="../toons.css">')
         print('\t\t<link rel="icon" href="http:///favicon.ico">')
         print('\t\t<title>' + self.__series["meta"]["title"] + '</title>')
         print('\t</head>')
         print('\t<body>\n')
+        #print(self.__url)
         
     ##  printTitle
     #   @brief  Print title of page.
@@ -70,10 +76,12 @@ class PageManager():
         BFm         = ButtonFormatter()
         
         # Format each button.
+        url         = self.__url
+        #print(url)
+        
         action      = 'about'
         index       = str(self.__index)
         fields      = {'index': index, 'action': action}
-        url         = 'http://localhost:8000/cgi-bin/index.py'
         name        = BFm.setButton(action, action.capitalize())
         data       += '\t\t\t' + LFm.setLink(url, name, fields) +'\n'
         
@@ -82,35 +90,30 @@ class PageManager():
         action      = 'first'
         index       = str(1)
         fields      = {'index': index, 'action': action}
-        url         = 'http://localhost:8000/cgi-bin/index.py'
         name        = BFm.setButton(action, action.capitalize())
         data       += '\t\t\t' + LFm.setLink(url, name, fields) +'\n'
         
         action      = 'previous'
         index       = str(self.__index - 1)
         fields      = {'index': index, 'action': action}
-        url         = 'http://localhost:8000/cgi-bin/index.py'
         name        = BFm.setButton(action, action.capitalize()[:-4])
         data       += '\t\t\t' + LFm.setLink(url, name, fields) +'\n'
         
         action      = 'reload'
         index       = str(self.__index)
         fields      = {'index': index, 'action': action}
-        url         = 'http://localhost:8000/cgi-bin/index.py'
         name        = BFm.setButton(action, action.capitalize())
         data       += '\t\t\t' + LFm.setLink(url, name, fields) +'\n'
         
         action      = 'next'
         index       = str(self.__index + 1)
         fields      = {'index': index, 'action': action}
-        url         = 'http://localhost:8000/cgi-bin/index.py'
         name        = BFm.setButton(action, action.capitalize())
         data       += '\t\t\t' + LFm.setLink(url, name, fields) +'\n'
         
         action      = 'last'
         index       = str(len(self.__series["episodes"]) - 1)
         fields      = {'index': index, 'action': action}
-        url         = 'http://localhost:8000/cgi-bin/index.py'
         name        = BFm.setButton(action, action.capitalize())
         data       += '\t\t\t' + LFm.setLink(url, name, fields) +'\n'
         print(data)
@@ -146,7 +149,7 @@ class PageManager():
         else:
             episode = self.__series["episodes"][self.__index]
             data    = '\t\t\t'
-            data   += "Episode #" + episode["number"]
+            data   += "<p>Episode #" + episode["number"] + "</p>"
             data   += "<h1>" + episode["story"] + " - Part" + episode["part"] + "</h1>"
             data   += "<img src=\"../" + self.__title + "/episodes/" + self.__title + "_" + episode["number"] + ".jpg\">"
             data   += "<p>" + episode["notes"] + "</p>"

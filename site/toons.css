@@ -1,23 +1,36 @@
-div.controls
-{
-    height:     30px;
-    width:      60px;
-    font-size:  16px;
-}
-
-#meta
+#title
 {
     h1
     {
-        font-size:  30px;
+        font-size:  80px;
     }
     p
     {
-        font-size:  20px;
+        font-size:  60px;
+    }
+
+    img
+    {
+        width:      100%;
     }
 }
+    
+.button
+{
+    text-align: center;
+    height:     100px;
+    width:      200px;
+    font-size:  150;
+}
+    
+#controls
+{
+    height:     80px;
+    width:      100%;
+    font-size:  16px;
+}
 
-#view
+#data
 {
     h1
     {
@@ -27,25 +40,62 @@ div.controls
     {
         font-size:  40px;
     }
+
+    img
+    {
+        width:      100%;
+    }
 }
 
-div.data
+@media only screen and (orientation: portrait)
 {
-    font-size:  40px;
-}
+    h1
+    {
+        font-size:  100px;
+    }
+    
+    #title
+    {
+        h1
+        {
+            font-size:  100px;
+        }
+        p
+        {
+            font-size:  40px;
+        }
 
-img
-{
-    width:      720px;
-}
+        img
+        {
+            width:      100%;
+        }
+    }
 
-@media screen (orientation: portrait) {
+    #data
+    {
+        h1
+        {
+            font-size:  2000px;
+        }
+        p
+        {
+            font-size:  40px;
+        }
+    }
     
     #controls
     {
-        height:     80px;
-        width:      160px;
-        font-size:  50px;
+        height:     210px;
+        width:      100%;
+        font-size:  10px;
+    }
+    
+    button
+    {
+        text-align: center;
+        height:     100px;
+        width:      190px;
+        font-size:  40px;
     }
     
     #data
@@ -60,10 +110,109 @@ img
         {
             font-size:  40px;
         }
+    }
         
+    img
+    {
+        width:      100%;
+    }
+}
+
+@media screen and (max-width: 1900px) and (orientation: landscape)
+{
+    #title
+    {
+        h1
+        {
+            font-size:  80px;
+        }
+        p
+        {
+            font-size:  60px;
+        }
+
         img
         {
             width:      100%;
+        }
+    }   
+    
+    .button
+    {
+        text-align: center;
+        height:     100px;
+        width:      200px;
+        font-size:  150;
+    }
+    
+    #controls
+    {
+        height:     80px;
+        width:      100%;
+        font-size:  16px;
+    }
+    
+    #data
+    {
+        h1
+        {
+            font-size:  50px;
+        }
+        p
+        {
+            font-size:  40px;
+        }
+    }
+    
+    img
+    {
+        width:      800px;
+    }
+}
+
+@media screen and (max-width: 950px) and (orientation: landscape)
+{
+    #title
+    {
+        h1
+        {
+            font-size:  80px;
+        }
+        p
+        {
+            font-size:  60px;
+        }
+
+        img
+        {
+            width:      100%;
+        }
+    }   
+    
+    .button
+    {
+        text-align: center;
+        height:     100px;
+        width:      200px;
+        font-size:  150;
+    }
+    
+    #controls
+    {
+        height:     80px;
+        width:      100%;
+        font-size:  16px;
+    }
+    
+    #data
+    {
+        h1
+        {
+            font-size:  50px;
+        }
+        p
+        {
+            font-size:  40px;
         }
     }
     
@@ -71,46 +220,5 @@ img
     {
         width:      100%;
     }
+}
 
-@media screen and (max-height: 1000px) and (orientation: landscape) {
-    
-    #controls
-    {
-        height:     80px;
-        width:      160px;
-        font-size:  50px;
-    }
-    
-    #meta
-    {
-        h1
-        {
-            font-size:  50px;
-        }
-        p
-        {
-            font-size:  40px;
-        }
-    }
-    
-    #view
-    {
-        h1
-        {
-            font-size:  50px;
-        }
-        p
-        {
-            font-size:  40px;
-        }
-    }
-    
-    #data
-    {
-        font-size:  50px;
-    }
-    
-    img
-    {
-        width:      720px;
-    }

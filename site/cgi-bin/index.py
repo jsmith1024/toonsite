@@ -9,6 +9,7 @@ from PageManager    import PageManager
 Page    = PageManager()
 Page.printStart()
 Page.printTitle()
+Page.printLine()
 Page.printButtons()
 Page.printLine()
 Page.printContent()
