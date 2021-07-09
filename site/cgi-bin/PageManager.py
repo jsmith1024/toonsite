@@ -24,8 +24,13 @@ class PageManager():
             self.__title    = form.getfirst('title')
         else:
             self.__title    = "TEST"
-        if form.getfirst('index'):
-            self.__index    = int(form.getfirst('index'))
+        if not form.getfirst('index'):
+            self.__index    = False
+        else:
+            try:
+                self.__index= int(form.getfirst('index'))
+            except:
+                self.__index= False
         if form.getfirst('action'):
             self.__action   = form.getfirst('action')
         else:
@@ -36,8 +41,13 @@ class PageManager():
             data=myfile.read()
         self.__series       = json.loads(data)
         
-        if not form.getfirst('index'):
-            self.__index    = len(self.__series["episodes"]) - 1
+        maximum             = len(self.__series["episodes"]) - 1
+        if not self.__index:
+            self.__index    = maximum
+        if self.__index <= 0:
+            self.__index    = 1
+        if self.__index > maximum:
+            self.__index > maximum
         
         # Hardwire Address  - MORE SECURE
         # Uncomment and set if desired.
@@ -50,7 +60,7 @@ class PageManager():
         #self.__url          = '/' + file_path     # DON'T TOUCH!
         
         # Autodetect Address NOT AS SECURE         Best for Testing
-        # Commet or delete to not use autodetect
+        # Comment or delete to not use autodetect
         import os
         self.__url          = copy.deepcopy(os.environ['HTTP_REFERER'].split('?')[0])
         
