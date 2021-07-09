@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['htmlsegmentformatter_38',['HTMLSegmentFormatter',['../namespaceHTMLSegmentFormatter.html',1,'']]]
+  ['index_31',['index',['../namespaceindex.html',1,'']]]
 ];

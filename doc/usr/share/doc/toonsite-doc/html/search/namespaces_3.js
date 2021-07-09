@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['index_39',['index',['../namespaceindex.html',1,'']]]
+  ['linkformatter_32',['LinkFormatter',['../namespaceLinkFormatter.html',1,'']]]
 ];

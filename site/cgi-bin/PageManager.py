@@ -39,11 +39,18 @@ class PageManager():
         if not form.getfirst('index'):
             self.__index    = len(self.__series["episodes"]) - 1
         
-        #host                = 'localhost'
-        #port                = '8000'
-        #file_path           = 'cgi-bin/index.py'
-        #self.__url          = 'http://' + host + ':' + port + '/' + file_path
+        # Hardwire Address  - MORE SECURE
+        # Uncomment and set if desired.
+        #host                = 'localhost'         # Hoste address or name.
+        #port                = '8000'              # Set to False, if none.
+        #file_path           = 'cgi-bin/index.py'  # Precise path.
+        #self.__url          = 'http://' + host    # DON'T TOUCH!
+        #if port:
+            #self.__url      = ':' + port          # DON'T TOUCH!
+        #self.__url          = '/' + file_path     # DON'T TOUCH!
         
+        # Autodetect Address NOT AS SECURE         Best for Testing
+        # Commet or delete to not use autodetect
         import os
         self.__url          = copy.deepcopy(os.environ['HTTP_REFERER'].split('?')[0])
         

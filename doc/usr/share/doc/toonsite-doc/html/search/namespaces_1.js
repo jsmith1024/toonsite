@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['divupdateformatter_37',['DivUpdateFormatter',['../namespaceDivUpdateFormatter.html',1,'']]]
+  ['htmlsegmentformatter_30',['HTMLSegmentFormatter',['../namespaceHTMLSegmentFormatter.html',1,'']]]
 ];

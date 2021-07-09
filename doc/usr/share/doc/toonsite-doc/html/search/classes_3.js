@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['linkformatter_34',['LinkFormatter',['../classLinkFormatter.html',1,'LinkFormatter'],['../classLinkFormatter_1_1LinkFormatter.html',1,'LinkFormatter.LinkFormatter']]]
+  ['pagemanager_28',['PageManager',['../classPageManager_1_1PageManager.html',1,'PageManager.PageManager'],['../classPageManager.html',1,'PageManager']]]
 ];
