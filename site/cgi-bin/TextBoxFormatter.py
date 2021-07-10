@@ -17,7 +17,7 @@ class TextBoxFormatter(HTMLSegmentFormatter):
     #   @param      sub_vert    (bool)          Add new line before submit? default = False
     #   @returns    (str)                       form string
     def setForm(self, boxes, vertical = False, sub_vert = False):
-        data            = '\t\t\t' +'<form>\n'
+        data            = '\t\t\t' +'<form action="http://localhost:8000/cgi-bin/index.py?index="' + "2" + '">\n'
         for i in range(len(boxes)):
             if vertical and (i != 0):
                 data   += '</p>'
@@ -41,6 +41,7 @@ class TextBoxFormatter(HTMLSegmentFormatter):
         if not box_name:
             box_name    = box_label.lower()
         #data            = '\t\t\t\t' + '<label for="' + box_id + '">' + box_label + '</label><br>\n'
-        data            = '\t\t\t\t' + '<input type="text" id="' + box_id + '" value="' + box_label + '">\n'
+        #data            = '\t\t\t\t' + '<input type="text" id="' + box_id + '" value="' + box_label + '" placeholder="Episode #">\n'
+        data            = '\t\t\t\t' + '<input type="text" id="' + box_id + '" placeholder="Episode #">\n'
         #print(data)
         return data

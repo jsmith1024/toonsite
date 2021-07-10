@@ -177,6 +177,11 @@ class PageManager():
         print(data)
         print('\t\t</div>\n')
         
+    ##  printTest
+    #   @brief  Print a CSS ID marker.
+    def printTest(self):
+        print('\t\t<div id="test"><hr></div>\n')
+        
     ##  printFinish
     #   @brief  Print end of page.
     def printFinish(self):

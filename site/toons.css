@@ -20,7 +20,7 @@ input[type=text]
     width:      200px;
 }
 
-.button
+button
 {
     text-align: center;
     height:     100px;
@@ -51,6 +51,15 @@ input[type=text]
         width:      100%;
     }
 }
+    
+#test
+{
+    hr
+    {
+        width:          100%;
+        border-top:         20px solid blue;
+    }
+}
 
 @media only screen and (orientation: portrait)
 {
@@ -68,7 +77,9 @@ input[type=text]
         p
         {
             font-size:  40px;
-        }input[type=text]
+        }
+        
+        input[type=text]
 
         img
         {
@@ -121,6 +132,15 @@ input[type=text]
     {
         width:      100%;
     }
+    
+    #test
+    {
+        hr
+        {
+            width:          100%;
+            border:         20px solid purple;
+        }
+    }
 }
 
 @media screen and (max-width: 1900px) and (orientation: landscape)
@@ -144,16 +164,16 @@ input[type=text]
 
     form
     {
-        width:      500px;
+        width:      600px;
     }
     
     input[type=text]
     {
-        width:      200px;
+        width:      400px;
     }
 
     
-    .button
+    button
     {
         text-align: center;
         height:     100px;
@@ -184,6 +204,21 @@ input[type=text]
     {
         width:      800px;
     }
+    
+    hr
+    {
+        width:          100%;
+        border:         10px solid blue;
+    }
+    
+    #test
+    {
+        hr
+        {
+            width:          100%;
+            border:         10px solid green;
+        }
+    }
 }
 
 @media screen and (max-width: 950px) and (orientation: landscape)
@@ -212,10 +247,10 @@ input[type=text]
     
     input[type=text]
     {
-        width:      200px;
+        width:      400px;
     }
     
-    .button
+    button
     {
         text-align: center;
         height:     100px;
@@ -245,6 +280,15 @@ input[type=text]
     img
     {
         width:      100%;
+    }
+    
+    #test
+    {
+        hr
+        {
+            width:          100%;
+            border:         10px solid red;
+        }
     }
 }
 
