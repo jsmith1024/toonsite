@@ -14,7 +14,12 @@
         width:      100%;
     }
 }
-    
+
+input[type=text]
+{
+    width:      200px;
+}
+
 .button
 {
     text-align: center;
@@ -22,7 +27,7 @@
     width:      200px;
     font-size:  150;
 }
-    
+
 #controls
 {
     height:     80px;
@@ -63,7 +68,7 @@
         p
         {
             font-size:  40px;
-        }
+        }input[type=text]
 
         img
         {
@@ -135,7 +140,18 @@
         {
             width:      100%;
         }
-    }   
+    }
+
+    form
+    {
+        width:      500px;
+    }
+    
+    input[type=text]
+    {
+        width:      200px;
+    }
+
     
     .button
     {
@@ -187,7 +203,17 @@
         {
             width:      100%;
         }
-    }   
+    }
+
+    form
+    {
+        width:      500px;
+    }
+    
+    input[type=text]
+    {
+        width:      200px;
+    }
     
     .button
     {

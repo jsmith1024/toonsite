@@ -2,21 +2,19 @@
 
 import unittest
 from test_HTMLSegmentFormatter              import TestAdd_HTMLSegmentFormatter
-from test_DivUpdateFormatter                import TestAdd_DivUpdateFormatter
 from test_ButtonFormatter                   import TestAdd_ButtonFormatter
 from test_LinkFormatter                     import TestAdd_LinkFormatter
 from test_LinkFormatterAndButtonFormatter   import TestAdd_LinkAndButton
-#from test_TextBoxFormatter                  import TestAdd_TextBoxFormatter
+from test_TextBoxFormatter                  import TestAdd_TextBoxFormatter
 
 def toonsite_suite():
     suite   = unittest.TestSuite()
     result  = unittest.TestResult()
     suite.addTest(unittest.makeSuite(TestAdd_HTMLSegmentFormatter))
-    suite.addTest(unittest.makeSuite(TestAdd_DivUpdateFormatter))
     suite.addTest(unittest.makeSuite(TestAdd_ButtonFormatter))
     suite.addTest(unittest.makeSuite(TestAdd_LinkFormatter))
     suite.addTest(unittest.makeSuite(TestAdd_LinkAndButton))
-    #suite.addTest(unittest.makeSuite(TestAdd_TextBoxFormatter))
+    suite.addTest(unittest.makeSuite(TestAdd_TextBoxFormatter))
     runner  = unittest.TextTestRunner(verbosity=2)
     print(runner.run(suite))
 

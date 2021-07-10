@@ -4,6 +4,7 @@
 
 from ButtonFormatter    import ButtonFormatter
 from LinkFormatter      import LinkFormatter
+from TextBoxFormatter   import TextBoxFormatter
 
 import copy
 import fileinput
@@ -101,6 +102,9 @@ class PageManager():
         fields      = {'index': index, 'action': action}
         name        = BFm.setButton(action, action.capitalize())
         data       += '\t\t\t' + LFm.setLink(url, name, fields) +'\n'
+        
+        TBF         = TextBoxFormatter()
+        data       += TBF.setForm([TBF.setTextBox('typein')])
         
         data       += "\t\t\t</p>\n"
         
