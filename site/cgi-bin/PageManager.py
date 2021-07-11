@@ -21,11 +21,15 @@ class PageManager():
     #   @brief  Read form request variables.
     def __init__(self):
         form                = cgi.FieldStorage()
+        if form.getfirst('typein'):
+            self.__title    = form.getfirst('typein')
         if form.getfirst('title'):
             self.__title    = form.getfirst('title')
         else:
             self.__title    = "TEST"
-        if not form.getfirst('index'):
+        if form.getfirst('typein'):
+            self.__index    = form.getfirst('typein')
+        elif not form.getfirst('index'):
             self.__index    = False
         else:
             try:
@@ -77,7 +81,7 @@ class PageManager():
         print('\t\t<title>' + self.__series["meta"]["title"] + '</title>')
         print('\t</head>')
         print('\t<body>\n')
-        #print(self.__url)
+        print(self.__index)
         
     ##  printTitle
     #   @brief  Print title of page.
@@ -176,11 +180,6 @@ class PageManager():
             data   += "<p>" + episode["notes"] + "</p>"
         print(data)
         print('\t\t</div>\n')
-        
-    ##  printTest
-    #   @brief  Print a CSS ID marker.
-    def printTest(self):
-        print('\t\t<div id="test"><hr></div>\n')
         
     ##  printFinish
     #   @brief  Print end of page.
